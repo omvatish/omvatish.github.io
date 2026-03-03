@@ -17,7 +17,8 @@
   <!-- ─── NAV ────────────────────────────────────────────── -->
   <nav class="nav" id="nav">
     <a href="#home" class="nav-logo">OV<span class="dot">.</span></a>
-    <ul class="nav-links">
+   <ul class="nav-links">
+      <li class="nav-close-item"><button class="nav-close" id="nav-close" aria-label="close menu">✕ Close</button></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#gallery">Gallery</a></li>
@@ -25,8 +26,10 @@
       <li><a href="#blog">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+  <a href="resume.pdf" class="btn-primary nav-resume" download>Download CV</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="toggle menu">
       <span></span><span></span><span></span>
+    </button>
     </button>
   </nav>
 
@@ -157,6 +160,67 @@
 
       </div>
     </div>
+    
+  </section>
+  <!-- ─── TIMELINE ─────────────────────────────────────── -->
+  <section class="timeline-section section" id="timeline">
+    <div class="container">
+      <p class="section-label center reveal">/ My Journey</p>
+      <h2 class="section-title center reveal">What I've Been <em>Up To</em></h2>
+      <div class="timeline">
+
+        <div class="timeline-item reveal" data-year="2025">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2025 — Present</span>
+            <h3>3rd Year Networking Student</h3>
+            <p>Deep in advanced routing protocols, network security, and infrastructure design. Building labs in Packet Tracer, chasing certs.</p>
+            <div class="timeline-tags"><span>🌐 CCNA Track</span><span>🔒 Security</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-year="2024">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2024</span>
+            <h3>Started Photography & Videography</h3>
+            <p>Picked up a camera and never looked back. Started shooting landscapes, events, and street scenes. Built a Lightroom workflow and began posting content online.</p>
+            <div class="timeline-tags"><span>📷 Photography</span><span>🎥 Video</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-year="2023">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2023</span>
+            <h3>Launched Streaming & Content Creation</h3>
+            <p>Set up a full streaming rig with OBS. Started creating gaming content, designing stream overlays, and building an audience.</p>
+            <div class="timeline-tags"><span>🎮 Gaming</span><span>📡 Streaming</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-year="2023">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2023</span>
+            <h3>Started IT Program</h3>
+            <p>Enrolled in Networking & IT. First exposure to Cisco IOS, TCP/IP fundamentals, and Linux. Immediately hooked.</p>
+            <div class="timeline-tags"><span>💻 IT</span><span>🐧 Linux</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-year="now">
+          <div class="timeline-dot active"></div>
+          <div class="timeline-content highlight">
+            <span class="timeline-year now-label">Right Now</span>
+            <h3>Building, Shooting, Streaming</h3>
+            <p>All three lanes running at once. Looking for internships, collabs, and cool projects to work on.</p>
+            <div class="timeline-tags"><span>🚀 Open to Work</span><span>🤝 Collabs Welcome</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
   <!-- ─── GALLERY ──────────────────────────────────────────── -->
@@ -165,14 +229,13 @@
       <p class="section-label center reveal">/ Visual Work</p>
       <h2 class="section-title center reveal">Through the <em>Lens</em></h2>
       <div class="gallery-grid">
-        <!-- Replace these placeholders with your actual images -->
-        <div class="gallery-item tall reveal"><div class="gallery-placeholder"><span>Photo 1</span></div></div>
-        <div class="gallery-item reveal"><div class="gallery-placeholder"><span>Photo 2</span></div></div>
-        <div class="gallery-item reveal"><div class="gallery-placeholder"><span>Photo 3</span></div></div>
-        <div class="gallery-item wide reveal"><div class="gallery-placeholder"><span>Photo 4 — Wide</span></div></div>
-        <div class="gallery-item reveal"><div class="gallery-placeholder"><span>Photo 5</span></div></div>
-        <div class="gallery-item reveal"><div class="gallery-placeholder"><span>Photo 6</span></div></div>
-        <div class="gallery-item reveal"><div class="gallery-placeholder"><span>Photo 7</span></div></div>
+    <div class="gallery-item tall reveal-scale" style="--d:0s"><div class="gallery-placeholder"><span>Photo 1</span></div></div>
+        <div class="gallery-item reveal-scale" style="--d:0.1s"><div class="gallery-placeholder"><span>Photo 2</span></div></div>
+        <div class="gallery-item reveal-scale" style="--d:0.15s"><div class="gallery-placeholder"><span>Photo 3</span></div></div>
+        <div class="gallery-item wide reveal-scale" style="--d:0.2s"><div class="gallery-placeholder"><span>Photo 4 — Wide</span></div></div>
+        <div class="gallery-item reveal-scale" style="--d:0.25s"><div class="gallery-placeholder"><span>Photo 5</span></div></div>
+        <div class="gallery-item reveal-scale" style="--d:0.3s"><div class="gallery-placeholder"><span>Photo 6</span></div></div>
+        <div class="gallery-item reveal-scale" style="--d:0.35s"><div class="gallery-placeholder"><span>Photo 7</span></div></div>
       </div>
     </div>
   </section>
