@@ -83,6 +83,70 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelectorAll('.gallery-item').forEach(item => {
   item.addEventListener('click', () => {
     const img = item.querySelector('img');
+    const video = item.querySelector('video');
+    if (!img && !video) return;
+
+    // if it's a video, open it in lightbox too
+    if (video) {
+      const overlay = document.createElement('div');
+      overlay.style.cssText = `
+        position: fixed; inset: 0;
+        background: rgba(0,0,0,0.92);
+        backdrop-filter: blur(12px);
+        display: flex; align-items: center; justify-content: center;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        padding: 2rem;
+      `;
+      const bigVideo = document.createElement('video');
+      bigVideo.src = video.querySelector('source').src;
+      bigVideo.autoplay = true;
+      bigVideo.loop = true;
+      bigVideo.muted = true;
+      bigVideo.playsInline = true;
+      bigVideo.controls = true;
+      bigVideo.style.cssText = `
+        max-width: 90vw;
+        max-height: 85vh;
+        border-radius: 12px;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+      `;
+      const closeBtn = document.createElement('button');
+      closeBtn.innerHTML = '✕';
+      closeBtn.style.cssText = `
+        position: fixed; top: 1.5rem; right: 1.5rem;
+        width: 44px; height: 44px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.2);
+        color: white; font-size: 1.1rem;
+        cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        transition: background 0.2s;
+        z-index: 10000;
+      `;
+      closeBtn.onmouseenter = () => closeBtn.style.background = 'rgba(0,229,255,0.2)';
+      closeBtn.onmouseleave = () => closeBtn.style.background = 'rgba(255,255,255,0.1)';
+      const close = () => {
+        overlay.style.opacity = '0';
+        setTimeout(() => overlay.remove(), 300);
+      };
+      closeBtn.addEventListener('click', close);
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); }, { once: true });
+      overlay.appendChild(bigVideo);
+      overlay.appendChild(closeBtn);
+      document.body.appendChild(overlay);
+      requestAnimationFrame(() => {
+        overlay.style.opacity = '1';
+        bigVideo.style.transform = 'scale(1)';
+      });
+      return;
+    }
+
     if (!img) return;
 
     const overlay = document.createElement('div');
