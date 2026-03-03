@@ -374,29 +374,54 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
   gap: 1.5rem;
 }
 .skill-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
   padding: 2rem;
-  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s, background 0.4s;
   position: relative;
   overflow: hidden;
 }
 .skill-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent3));
-  transform: scaleX(0);
-  transition: transform var(--transition);
-  transform-origin: left;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
 }
-.skill-card:hover { border-color: rgba(0,229,255,0.2); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
-.skill-card:hover::before { transform: scaleX(1); }
-.skill-icon { font-size: 2rem; margin-bottom: 1rem; }
+.skill-card::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(0,229,255,0.06), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.skill-card:hover {
+  border-color: rgba(0,229,255,0.25);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,229,255,0.1);
+  background: rgba(255,255,255,0.055);
+}
+.skill-card:hover::after { opacity: 1; }
+.skill-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: rgba(0,229,255,0.08);
+  border: 1px solid rgba(0,229,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.25rem;
+  color: var(--accent);
+  transition: background 0.3s, border-color 0.3s;
+}
+.skill-icon svg { width: 20px; height: 20px; }
+.skill-card:hover .skill-icon {
+  background: rgba(0,229,255,0.15);
+  border-color: rgba(0,229,255,0.3);
+}
 .skill-card h3 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
@@ -408,8 +433,8 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
   font-family: var(--font-mono);
   font-size: 0.7rem;
   padding: 0.25rem 0.6rem;
-  background: rgba(0,229,255,0.06);
-  border: 1px solid rgba(0,229,255,0.15);
+  background: rgba(0,229,255,0.05);
+  border: 1px solid rgba(0,229,255,0.12);
   border-radius: 4px;
   color: var(--accent);
 }
