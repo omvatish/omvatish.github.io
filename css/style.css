@@ -302,7 +302,7 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
 }
 .about-image-wrap { position: relative; }
 .about-img-placeholder {
-  width: 100%; aspect-ratio: 3/4;
+  width: 100%; 
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
