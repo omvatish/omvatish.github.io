@@ -43,13 +43,18 @@ navToggle?.addEventListener('click', () => {
   navToggle.classList.toggle('active');
 });
 
+// Close button
+const navClose = document.getElementById('nav-close');
+navClose?.addEventListener('click', () => {
+  navLinks.classList.remove('open');
+  navToggle.classList.remove('active');
+});
+
 // Close on link click
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
     navToggle.classList.remove('active');
-  });
-});
 
 /* ─── SCROLL REVEAL ──────────────────────────────────── */
 const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
@@ -72,6 +77,18 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealEls.forEach(el => revealObserver.observe(el));
 
+// Gallery scale reveals
+document.querySelectorAll('.reveal-scale').forEach(el => {
+  const scaleObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        scaleObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  scaleObs.observe(el);
+});
 /* ─── HERO NAME GLITCH ───────────────────────────────── */
 const heroName = document.querySelector('.hero-name');
 if (heroName) {
