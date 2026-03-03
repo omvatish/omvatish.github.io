@@ -841,5 +841,21 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
   .about-stats { flex-wrap: wrap; gap: 1.25rem; }
   .section-title { font-size: clamp(1.8rem, 8vw, 2.5rem); }
   .contact-inner { margin: 0 0.5rem; border-radius: 16px; }
+     .about-image-wrap { 
+    overflow: hidden; 
+    padding-right: 0;
+  }
+  .about-img-deco { display: none; }
+  .about-img-placeholder {
+    aspect-ratio: unset;
+    width: 100%;
+  }
+  .about-img-placeholder img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: unset;
+  }
+   .about-grid { overflow: hidden; }
 }
 
