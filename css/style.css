@@ -476,7 +476,7 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
 /* ─────────────────────────────────────────────
    GALLERY
 ───────────────────────────────────────────── */
-.gallery { background: var(--bg2); }
+.gallery { background: var(--bg2); margin-top: 0; }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -723,6 +723,8 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
   .project-num { display: none; }
 
   .section { padding: 5rem 0; }
+  .skills.section { padding-bottom: 4rem; }
+.gallery.section { padding-top: 4rem; }
   .container { padding: 0 1.5rem; }
   .contact-inner { padding: 2rem 1.5rem; }
   .about-stats { gap: 1.5rem; }
@@ -874,7 +876,9 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
   .timeline { padding-left: 1.5rem; }
   .timeline-item { padding-left: 2rem; }
   .timeline-content { padding: 1.25rem; }
+  .section-title { overflow: hidden; }
 }
+
 
 /* ─── GALLERY SCALE-IN ANIMATION ───────────────── */
 .reveal-scale {
