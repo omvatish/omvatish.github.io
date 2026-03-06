@@ -328,20 +328,16 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
   gap: 6rem;
   align-items: center;
 }
-.about-image-wrap { position: relative; }
+.about-image-wrap {
+  position: relative;
+  filter: drop-shadow(0 0 40px rgba(0,229,255,0.12)) drop-shadow(-8px 20px 40px rgba(168,85,247,0.1));
+}
 .about-img-placeholder {
-  width: 100%; 
+  width: 100%;
   border-radius: 20px;
   overflow: hidden;
   border: 1px solid rgba(0,229,255,0.1);
   background: var(--surface);
-  box-shadow: 
-    0 0 0 1px rgba(0,229,255,0.05),
-    0 20px 60px rgba(0,0,0,0.5),
-    0 0 80px rgba(0,229,255,0.08),
-    -10px 20px 60px rgba(168,85,247,0.08),
-    10px 20px 60px rgba(0,229,255,0.06);
-  transition: box-shadow 0.5s ease, transform 0.5s ease;
 }
 
 .about-img-placeholder:hover {
