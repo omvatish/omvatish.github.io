@@ -290,17 +290,17 @@
       gap: 0.75rem;
     }
     .skill-row {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 1rem;
-      align-items: start;
-      padding: 1rem 1.25rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      transition: border-color 0.3s;
-    }
-    .skill-row:hover { border-color: rgba(0,229,255,0.15); }
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.skill-row:hover { border-color: rgba(0,229,255,0.15); transform: translateX(4px); }
     .skill-category {
       font-family: var(--font-mono);
       font-size: 0.72rem;
@@ -364,16 +364,16 @@
     .cert-list {
       display: flex; flex-direction: column; gap: 0.6rem;
     }
-    .cert-item {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.9rem 1.25rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      transition: border-color 0.3s;
-      flex-wrap: wrap; gap: 0.5rem;
-    }
-    .cert-item:hover { border-color: rgba(0,229,255,0.2); }
+   .cert-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.3s, transform 0.3s;
+  flex-wrap: wrap; gap: 0.5rem;
+}
+.cert-item:hover { border-color: rgba(0,229,255,0.2); transform: translateX(4px); }
     .cert-name {
       font-family: var(--font-body);
       font-size: 0.9rem;
