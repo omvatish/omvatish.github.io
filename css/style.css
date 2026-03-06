@@ -506,7 +506,7 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
 /* ─────────────────────────────────────────────
    PROJECTS
 ───────────────────────────────────────────── */
-.projects-list { display: flex; flex-direction: column; gap: 0; }
+.projects-list { display: flex; flex-direction: column; gap: 0; background: var(--bg2); }
 .project-card {
   display: grid;
   grid-template-columns: 120px 1fr auto;
@@ -563,7 +563,7 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
 /* ─────────────────────────────────────────────
    BLOG
 ───────────────────────────────────────────── */
-.blog { background: var(--bg2); }
+.blog { background: var(--bg); }
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
