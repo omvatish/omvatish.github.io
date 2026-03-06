@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Om Vatish — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080b0f;
+      --bg2: #0d1117;
+      --surface: #131920;
+      --border: rgba(255,255,255,0.07);
+      --text: #e8edf2;
+      --text-muted: #6b7d8e;
+      --accent: #00e5ff;
+      --accent2: #ff6b35;
+      --accent3: #a855f7;
+      --font-display: 'Syne', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Grid bg */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Glow */
+    body::after {
+      content: '';
+      position: fixed;
+      width: 500px; height: 500px;
+      background: var(--accent);
+      border-radius: 50%;
+      filter: blur(150px);
+      opacity: 0.06;
+      top: -150px; right: -100px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── TOP NAV ── */
+    .top-bar {
+      position: fixed; top: 0; left: 0; right: 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.75rem 3rem;
+      background: rgba(8,11,15,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .top-bar-logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .top-bar-logo span { color: var(--accent); }
+    .top-bar-actions { display: flex; gap: 0.75rem; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.5rem 1.2rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-solid {
+      background: var(--accent);
+      color: var(--bg);
+      border: 2px solid var(--accent);
+    }
+    .btn-solid:hover {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    /* ── WRAPPER ── */
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 7rem 2rem 5rem;
+    }
+
+    /* ── HEADER ── */
+    .resume-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: end;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .resume-name {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .resume-name span {
+      -webkit-text-stroke: 2px var(--accent);
+      color: transparent;
+    }
+    .resume-title {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .resume-contact {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+    }
+    .contact-item {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .contact-item a { color: var(--text-muted); transition: color 0.2s; }
+    .contact-item a:hover { color: var(--accent); }
+    .resume-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-end;
+    }
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 100px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+    .badge-cyan { background: rgba(0,229,255,0.1); border: 1px solid rgba(0,229,255,0.3); color: var(--accent); }
+    .badge-purple { background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.3); color: var(--accent3); }
+    .badge-orange { background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3); color: var(--accent2); }
+
+    /* ── SECTIONS ── */
+    .resume-section {
+      margin-bottom: 3rem;
+      animation: fadeUp 0.6s ease both;
+    }
+    .resume-section:nth-child(2) { animation-delay: 0.1s; }
+    .resume-section:nth-child(3) { animation-delay: 0.15s; }
+    .resume-section:nth-child(4) { animation-delay: 0.2s; }
+    .resume-section:nth-child(5) { animation-delay: 0.25s; }
+    .resume-section:nth-child(6) { animation-delay: 0.3s; }
+    .resume-section:nth-child(7) { animation-delay: 0.35s; }
+
+    .section-header {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      white-space: nowrap;
+    }
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0.3;
+    }
+
+    /* Summary */
+    .summary-text {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.8;
+      padding: 1.5rem;
+      background: rgba(0,229,255,0.03);
+      border: 1px solid rgba(0,229,255,0.08);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 12px 12px 0;
+    }
+
+    /* Experience */
+    .exp-item {
+      position: relative;
+      padding: 1.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s, transform 0.3s;
+      overflow: hidden;
+    }
+    .exp-item::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,229,255,0.2), transparent);
+    }
+    .exp-item:hover { border-color: rgba(0,229,255,0.2); transform: translateX(4px); }
+    .exp-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 1rem; margin-bottom: 0.4rem; flex-wrap: wrap;
+    }
+    .exp-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .exp-date {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      background: rgba(0,229,255,0.08);
+      border: 1px solid rgba(0,229,255,0.15);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .exp-org {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .exp-bullets {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .exp-bullets li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      padding-left: 1.25rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    .exp-bullets li::before {
+      content: '▸';
+      position: absolute; left: 0;
+      color: var(--accent);
+      font-size: 0.75rem;
+      top: 0.1em;
+    }
+
+    /* Skills Grid */
+    .skills-table {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .skill-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1rem;
+      align-items: start;
+      padding: 1rem 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: border-color 0.3s;
+    }
+    .skill-row:hover { border-color: rgba(0,229,255,0.15); }
+    .skill-category {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding-top: 0.1rem;
+    }
+    .skill-items {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+    }
+    .skill-pill {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.2rem 0.55rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    /* Education & Certs */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .edu-card {
+      padding: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color 0.3s;
+    }
+    .edu-card:hover { border-color: rgba(0,229,255,0.2); }
+    .edu-degree {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
+    .edu-school {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+    .edu-date {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+    .edu-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* Certs */
+    .cert-list {
+      display: flex; flex-direction: column; gap: 0.6rem;
+    }
+    .cert-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 1.25rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: border-color 0.3s;
+      flex-wrap: wrap; gap: 0.5rem;
+    }
+    .cert-item:hover { border-color: rgba(0,229,255,0.2); }
+    .cert-name {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    .cert-issuer {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+    .cert-status {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .cert-done { background: rgba(0,229,255,0.1); border: 1px solid rgba(0,229,255,0.25); color: var(--accent); }
+    .cert-progress { background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.25); color: var(--accent2); }
+
+    /* Projects */
+    .project-list {
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .project-item {
+      padding: 1.25rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent3);
+      border-radius: 0 12px 12px 0;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .project-item:hover { border-color: rgba(168,85,247,0.4); transform: translateX(4px); }
+    .project-item h4 {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+    .project-item p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .resume-footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .resume-footer p {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar { padding: 0.75rem 1.25rem; }
+      .page { padding: 5.5rem 1.25rem 3rem; }
+      .resume-header { grid-template-columns: 1fr; }
+      .resume-badges { flex-direction: row; align-items: flex-start; flex-wrap: wrap; }
+      .edu-grid { grid-template-columns: 1fr; }
+      .skill-row { grid-template-columns: 1fr; gap: 0.5rem; }
+      .exp-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <a href="index.html" class="top-bar-logo">OV<span>.</span></a>
+    <div class="top-bar-actions">
+      <a href="index.html" class="btn btn-outline">← Portfolio</a>
+      <a href="resume.pdf" download class="btn btn-solid">↓ Download PDF</a>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="resume-header">
+      <div>
+        <h1 class="resume-name">Om <span>Vatish</span></h1>
+        <p class="resume-title">IT Technician & Network Support Specialist</p>
+        <div class="resume-contact">
+          <span class="contact-item">📍 Windsor, ON</span>
+          <span class="contact-item">📞 382-342-2515</span>
+          <span class="contact-item"><a href="mailto:omvatish08@gmail.com">omvatish08@gmail.com</a></span>
+          <span class="contact-item"><a href="https://github.com/omvatish" target="_blank">github.com/omvatish</a></span>
+        </div>
+      </div>
+      <div class="resume-badges">
+        <span class="badge badge-cyan">CCNA · 3 Modules</span>
+        <span class="badge badge-orange">CompTIA A+ · In Progress</span>
+        <span class="badge badge-purple">Open to Work</span>
+      </div>
+    </header>
+
+    <!-- SUMMARY -->
+    <section class="resume-section">
+      <div class="section-header">
+        <span class="section-label">/ Summary</span>
+        <div class="section-line"></div>
+      </div>
+      <p class="summary-text">
+        Dedicated IT professional and Computer Systems Networking Technician student with hands-on experience in network infrastructure, systems administration, and IT support operations. Proven track record managing enterprise-level Cisco networking environments, leading IT teams, and delivering reliable technical support in fast-paced settings. Currently pursuing CompTIA A+ to complement three completed CCNA modules and extensive real-world lab experience.
+      </p>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="resume-section">
+      <div class="section-header">
+        <span class="section-label">/ Experience</span>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">Student IT Coordinator</span>
+          <span class="exp-date">May 2025 — Present</span>
+        </div>
+        <p class="exp-org">SRC – Student Representative Council, St. Clair College</p>
+        <ul class="exp-bullets">
+          <li>Manage scheduling, staffing, and supervision of IT support across student facilities including Nexus Gaming Arena and computer labs.</li>
+          <li>Oversee daily IT operations and coordinate technology setup for college-wide gaming events, ensuring seamless execution.</li>
+          <li>Supervise student staff, assign tasks, and uphold service standards and operational efficiency across all IT operations.</li>
+          <li>Collaborate with college departments to plan and fulfill IT requirements for events and ongoing campus activities.</li>
+          <li>Ensure compliance with operational policies, reporting protocols, and IT asset management procedures.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span class="exp-title">Student IT Technician</span>
+          <span class="exp-date">May 2024 — May 2025</span>
+        </div>
+        <p class="exp-org">SRC – Student Representative Council, St. Clair College</p>
+        <ul class="exp-bullets">
+          <li>Provided comprehensive help desk support across Nexus Gaming Arena, computer labs, and printshop environments.</li>
+          <li>Installed, configured, and maintained PCs, gaming systems, and peripherals; resolved hardware/software and network connectivity issues.</li>
+          <li>Assisted students with workstation setup, account access, and general IT troubleshooting.</li>
+          <li>Managed IT assets, maintained accurate usage logs, and processed POS transactions with attention to detail.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="resume-section">
+      <div class="section-header">
+        <span class="section-label">/ Education</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <p class="edu-school">St. Clair College, Windsor ON</p>
+          <h3 class="edu-degree">Advanced Diploma — Computer Systems Networking Technician</h3>
+          <p class="edu-date">2024 — Present · Year 3</p>
+          <p class="edu-note">Focus: Cisco networking, Windows Server, Linux systems, IT security</p>
+        </div>
+        <div class="edu-card">
+          <p class="edu-school">Cisco Networking Academy</p>
+          <h3 class="edu-degree">CCNA Certified — 3 Modules Completed</h3>
+          <p class="edu-date">2024 — Present</p>
+          <p class="edu-note">Intro to Networks · Switching & Routing · Enterprise Networking, Security & Automation</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="resume-section">
+      <div class="section-header">
+        <span class="section-label">/ Certifications</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="cert-list">
+        <div class="cert-item">
+          <div>
+            <p class="cert-name">CCNA: Introduction to Networks</p>
+            <p class="cert-issuer">Cisco Networking Academy</p>
+          </div>
+          <span class="cert-status cert-done">✓ Completed</span>
+        </div>
+        <div class="cert-item">
+          <div>
+            <p class="cert-name">CCNA: Switching, Routing & Wireless Essentials</p>
+            <p class="cert-issuer">Cisco Networking Academy</p>
+          </div>
+          <span class="cert-status cert-done">✓ Completed</span>
+        </div>
+        <div class="cert-item">
+          <div>
+            <p class="cert-name">CCNA: Enterprise Networking, Security & Automation</p>
+            <p class="cert-issuer">Cisco Networking Academy</p>
+          </div>
+          <span class="cert-status cert-done">✓ Completed</span>
+        </div>
+        <div class="cert-item">
+          <div>
+            <p class="cert-name">CompTIA A+</p>
+            <p class="cert-issuer">Self-Study</p>
+          </div>
+          <span class="cert-status cert-progress">⏳ In Progress</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="resume-section">
+      <div class="section-header">
+        <span class="section-label">/ Technical Skills</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-table">
+        <div class="skill-row">
+          <span class="skill-category">Networking</span>
+          <div class="skill-items">
+            <span class="skill-pill">Cisco Routing & Switching</span>
+            <span class="skill-pill">TCP/IP</span>
+            <span class="skill-pill">VLANs</span>
+            <span class="skill-pill">ACLs</span>
+            <span class="skill-pill">NAT</span>
+            <span class="skill-pill">OSPF</span>
+            <span class="skill-pill">Wireless Essentials</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Systems</span>
+          <div class="skill-items">
+            <span class="skill-pill">Windows OS & Server</span>
+            <span class="skill-pill">Linux (Ubuntu/Mint/Debian)</span>
+            <span class="skill-pill">Active Directory</span>
+            <span class="skill-pill">Microsoft Azure</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Tools</span>
+          <div class="skill-items">
+            <span class="skill-pill">Wireshark</span>
+            <span class="skill-pill">Cisco Packet Tracer</span>
+            <span class="skill-pill">VMware</span>
+            <span class="skill-pill">VirtualBox</span>
+            <span class="skill-pill">ServiceNow</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Hardware</span>
+          <div class="skill-items">
+            <span class="skill-pill">PC Build & Setup</span>
+            <span class="skill-pill">Printer Maintenance</span>
+            <span class="skill-pill">Peripheral Config</span>
+            <span class="skill-pill">IT Asset Management</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Programming</span>
+          <div class="skill-items">
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">PHP</span>
+            <span class="skill-pill">HTML/CSS</span>
+            <span class="skill-pill">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Productivity</span>
+          <div class="skill-items">
+            <span class="skill-pill">Microsoft Office Suite</span>
+            <span class="skill-pill">Spreadsheets</span>
+            <span class="skill-pill">POS Systems</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="resume-section">
+      <div class="section-header">
+        <span class="section-label">/ Academic Projects</span>
+        <div class="section-line"></div>
+      </div>
+      <div class="project-list">
+        <div class="project-item">
+          <h4>Cisco Networking Labs</h4>
+          <p>Configured enterprise-scale networks using OSPF, ACLs, NAT overload, and Telnet access controls in Cisco Packet Tracer.</p>
+        </div>
+        <div class="project-item">
+          <h4>Linux Server Security</h4>
+          <p>Deployed secure SFTP with chroot jailing and SSH key authentication on Linux servers (MIT450).</p>
+        </div>
+        <div class="project-item">
+          <h4>Capstone Network Infrastructure Project</h4>
+          <p>Designed and documented a scalable enterprise-style network architecture incorporating VLAN segmentation, hierarchical core-distribution-access design, structured IP addressing, routing strategy, and infrastructure performance considerations for a simulated production environment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="resume-footer">
+      <p>References available upon request · Open to full-time, part-time, and contract IT roles</p>
+      <a href="resume.pdf" download class="btn btn-solid">↓ Download PDF</a>
+    </div>
+
+  </div>
+</body>
+</html>
