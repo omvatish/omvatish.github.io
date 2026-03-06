@@ -513,7 +513,7 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
   align-items: center;
   gap: 2rem;
   padding: 2.5rem 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 3px solid var(--border);
   transition: padding-left var(--transition);
 }
 .project-card:first-child { border-top: 1px solid var(--border); }
