@@ -506,7 +506,6 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
 /* ─────────────────────────────────────────────
    PROJECTS
 ───────────────────────────────────────────── */
-.project {background: var(--bg2);}
 .projects-list { display: flex; flex-direction: column; gap: 0; background: var(--bg2); }
 .project-card {
   display: grid;
@@ -564,7 +563,7 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
 /* ─────────────────────────────────────────────
    BLOG
 ───────────────────────────────────────────── */
-.blog { background: var(--bg); }
+.blog { background: var(--bg2); }
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -619,7 +618,6 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
 /* ─────────────────────────────────────────────
    CONTACT
 ───────────────────────────────────────────── */
-.contact { background: var(--bg2);}
 .contact-inner {
   max-width: 700px; margin: 0 auto;
   text-align: center;
