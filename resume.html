@@ -329,13 +329,28 @@
       gap: 1rem;
     }
     .edu-card {
-      padding: 1.5rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      transition: border-color 0.3s;
-    }
-    .edu-card:hover { border-color: rgba(0,229,255,0.2); }
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.edu-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 120%, rgba(0,229,255,0.08), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.edu-card:hover {
+  border-color: rgba(0,229,255,0.25);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,229,255,0.08);
+}
+.edu-card:hover::after { opacity: 1; }
     .edu-degree {
       font-family: var(--font-display);
       font-size: 0.95rem;
