@@ -22,10 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ─── NAV SCROLL ─────────────────────────────────────── */
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
-  });
+ const nav = document.getElementById('nav');
+
+const updateNav = () => {
+  if (window.scrollY > 5) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+};
+
+window.addEventListener('scroll', updateNav);
+updateNav(); // run once on load to set correct state
 
   /* ─── MOBILE NAV ─────────────────────────────────────── */
   const navToggle = document.getElementById('nav-toggle');
@@ -228,28 +236,39 @@ document.querySelectorAll('.gallery-item').forEach(item => {
     });
   }, 100);
 
-  /* ─── HERO NAME GLITCH ───────────────────────────────── */
-  const heroName = document.querySelector('.hero-name');
-  if (heroName) {
-    const glitchChars = '!@#$%^&*<>/\\[]{}|?~';
-    heroName.addEventListener('mouseenter', () => {
-      heroName.querySelectorAll('.accent-stroke').forEach(el => {
-        let count = 0;
-        const orig = el.textContent;
-        const iv = setInterval(() => {
-          if (count < 8) {
-            el.textContent = orig.split('').map(c =>
-              Math.random() > 0.5 ? glitchChars[Math.floor(Math.random() * glitchChars.length)] : c
-            ).join('');
-            count++;
-          } else {
-            el.textContent = orig;
-            clearInterval(iv);
-          }
-        }, 60);
-      });
+/* ─── HERO NAME GLITCH ───────────────────────────────── */
+const heroName = document.querySelector('.hero-name');
+if (heroName) {
+  const glitchChars = '!@#$%^&*';
+  let isGlitching = false;
+
+  heroName.addEventListener('mouseenter', () => {
+    if (isGlitching) return;
+    isGlitching = true;
+
+    heroName.querySelectorAll('.accent-stroke').forEach(el => {
+      const orig = el.textContent;
+      let count = 0;
+
+      // Fix width so layout never shifts
+      el.style.minWidth = el.offsetWidth + 'px';
+      el.style.display = 'inline-block';
+
+      const iv = setInterval(() => {
+        count++;
+        if (count < 5) {
+          el.textContent = orig.split('').map(c =>
+            Math.random() > 0.6 ? glitchChars[Math.floor(Math.random() * glitchChars.length)] : c
+          ).join('');
+        } else {
+          el.textContent = orig;
+          clearInterval(iv);
+          isGlitching = false;
+        }
+      }, 80);
     });
-  }
+  });
+}
 
   /* ─── PARALLAX HERO GLOWS ────────────────────────────── */
   const glow1 = document.querySelector('.glow-1');
