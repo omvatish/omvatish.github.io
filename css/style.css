@@ -476,7 +476,7 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
 /* ─────────────────────────────────────────────
    GALLERY
 ───────────────────────────────────────────── */
-.gallery { background: var(--bg2); margin-top: 0; }
+.gallery { background: var(--bg); margin-top: 0; }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
