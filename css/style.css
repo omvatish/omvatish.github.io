@@ -985,3 +985,56 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
   position: relative;
   z-index: 1;
 }
+/* Dev Banner */
+#dev-banner {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: #0a0a0a;
+  border-bottom: 1px solid #00ffe7;
+  box-shadow: 0 0 12px rgba(0, 255, 231, 0.15);
+}
+
+.banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1.2rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  color: #00ffe7;
+  letter-spacing: 0.08em;
+  position: relative;
+}
+
+.banner-icon {
+  font-size: 0.9rem;
+  animation: blink 1.4s step-end infinite;
+}
+
+.banner-text {
+  text-transform: uppercase;
+}
+
+.banner-close {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #00ffe7;
+  cursor: pointer;
+  font-size: 0.85rem;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  padding: 0.2rem 0.4rem;
+}
+
+.banner-close:hover {
+  opacity: 1;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
