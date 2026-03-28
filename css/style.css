@@ -101,7 +101,7 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
 ───────────────────────────────────────────── */
 .nav {
   position: fixed;
-  top: var(--banner-h); /* sits below banner by default */
+  top: 36px;
   left: 0; right: 0;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0.6rem 3rem;
