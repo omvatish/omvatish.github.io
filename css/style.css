@@ -987,7 +987,7 @@ body:has(a:hover) .cursor-trail, body:has(button:hover) .cursor-trail { transfor
 }
 /* Dev Banner */
 #dev-banner {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 9999;
   background: #0a0a0a;
