@@ -446,10 +446,19 @@
         nav.style.top = banner.offsetHeight + 'px';
       }
     }
+    
 
     updateNavOffset();
     window.addEventListener('resize', updateNavOffset);
   </script>
+  <script>
+  window.addEventListener('scroll', () => {
+    const banner = document.getElementById('dev-banner');
+    const nav = document.getElementById('nav');
+    const bannerBottom = banner.getBoundingClientRect().bottom;
+    nav.style.top = Math.max(0, bannerBottom) + 'px';
+  });
+</script>
 
 </body>
 </html>
