@@ -37,7 +37,7 @@ ul { list-style: none; }
    DEV BANNER
 ───────────────────────────────────────────── */
 #dev-banner {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 1001;
   background: rgba(8, 11, 15, 0.95);
