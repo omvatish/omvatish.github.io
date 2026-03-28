@@ -14,11 +14,22 @@
   <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png"/>
   <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png"/>
 </head>
+  
 <body>
 
   <!-- ─── CURSOR ─────────────────────────────────────────── -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-trail" id="cursor-trail"></div>
+  <!-- Add this right after your <body> tag, before your nav -->
+<div id="dev-banner">
+  <div class="banner-inner">
+    <span class="banner-icon">⚠</span>
+    <span class="banner-text">
+      Site under construction — Projects &amp; Blog coming soon
+    </span>
+    <button class="banner-close" onclick="document.getElementById('dev-banner').style.display='none'" aria-label="Dismiss">✕</button>
+  </div>
+</div>
 
   <!-- ─── NAV ────────────────────────────────────────────── -->
   <nav class="nav" id="nav">
