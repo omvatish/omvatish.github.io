@@ -101,6 +101,12 @@
     // Keep nav scrolled state on blog page
     document.getElementById('nav').classList.add('scrolled');
   </script>
+  <script>
+  // Match content top to actual nav height
+  const nav = document.getElementById('nav');
+  const post = document.querySelector('.blog-post');
+  post.style.marginTop = nav.offsetHeight + 'px';
+</script>
 
 </body>
 </html>
