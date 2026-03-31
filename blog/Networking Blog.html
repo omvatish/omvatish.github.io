@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Covering pictures for windsorite.ca — Om Vatish</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/blog.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursor-trail"></div>
+
+  <!-- ─── NAV ────────────────────────────────────────────── -->
+  <nav class="nav scrolled" id="nav">
+    <a href="../index.html" class="nav-logo">OV<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li class="nav-close-item"><button class="nav-close" id="nav-close" aria-label="close menu">✕ Close</button></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#gallery">Gallery</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#blog">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+      <li class="nav-mobile-buttons">
+        <a href="../index.html#contact" class="btn-ghost">Get In Touch</a>
+        <a href="../resume.html" class="btn-primary" target="_blank" rel="noopener noreferrer">Resume</a>
+      </li>
+    </ul>
+    <div class="nav-buttons">
+      <a href="../index.html#contact" class="btn-ghost nav-resume">Get In Touch</a>
+      <a href="../resume.html" class="btn-primary nav-resume" target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ─── BLOG POST ────────────────────────────────────────── -->
+  <main class="blog-post">
+    <div class="blog-post-container">
+
+      <header class="post-header">
+        <a href="../index.html#blog" class="back-link">← Back to Blog</a>
+        <span class="blog-tag">Photography</span>
+        <h1>Covering for windsorite.ca for the first time for Polar Plunge 2026</h1>
+        <div class="post-meta">
+          <span>📅 February 2026</span>
+          <span>✍️ Om Vatish</span>
+          <span>⏱ 5 min read</span>
+        </div>
+        <div class="post-hero-img">
+          <!-- swap placeholder with: <img src="../images/post-cover.jpg" alt="Polar Plunge 2026"> -->
+          <div class="gallery-placeholder"><img src="images/IMG8.jpg" alt="portrait"></div>
+        </div>
+      </header>
+
+      <article class="post-content">
+        <p class="lead">
+          In February 2026, I had the opportunity to cover the Polar Plunge Windsor 2026 event for the SRC. What started as a freezing cold morning by the water turned into one of the most energetic and meaningful events I've photographed. From capturing raw reactions to documenting community impact, this event reminded me why I love blending storytelling with visual media.
+        </p>
+
+        <h2>Capturing the Energy of the Polar Plunge</h2>
+        <p>
+          Covering the Polar Plunge was about more than simply taking photos. It was about preserving moments that reflected courage, unity, and purpose. Participants gathered despite the cold, ready to take the plunge in support of an important cause. My goal was to capture authentic reactions, movement, and atmosphere while adapting quickly to changing conditions. Shooting in winter weather required careful handling of equipment, fast adjustments to lighting, and constant awareness of timing to ensure key moments weren't missed.
+        </p>
+
+        <h2>Extending the Story Beyond the Event</h2>
+        <p>
+          After documenting the event for the SRC, I shared selected images with Windsorite.ca, a local Windsor news platform. Contributing visuals that helped tell the story to a broader audience was a rewarding experience. Seeing my work support community media coverage reinforced the importance of photography as a storytelling tool that extends beyond the event itself. It allowed the impact of the Polar Plunge to reach those who couldn't attend in person.
+        </p>
+
+        <h2>Technical and Creative Approach</h2>
+        <p>
+          For this event, I focused on maintaining fast shutter speeds to freeze motion, especially during the plunge itself. I relied on natural lighting while adjusting for bright outdoor conditions and reflective surfaces from water and snow. Capturing candid expressions was a priority, as genuine reactions bring authenticity to event coverage. The post-production process was efficient and intentional, ensuring the images were ready for both SRC use and media submission within a short timeframe.
+        </p>
+
+        <h2>Why This Matters to My Portfolio</h2>
+        <p>
+          As a third-year networking student who is also deeply involved in photography and media production, I enjoy operating at the intersection of technology, creativity, and community engagement. Covering Polar Plunge Windsor 2026 represents my ability to work in dynamic environments, deliver professional results under pressure, and contribute meaningfully to local storytelling. This project reflects the type of impactful, community-driven work I aim to continue building through my portfolio.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 <strong>Om Vatish</strong> · Built with intention.</p>
+      <p class="footer-sub">IT Student · Photographer · Gamer</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+
+  <script>
+    // Keep nav scrolled state on blog page
+    document.getElementById('nav').classList.add('scrolled');
+  </script>
+  <script>
+  // Match content top to actual nav height
+  const nav = document.getElementById('nav');
+  const post = document.querySelector('.blog-post');
+  post.style.marginTop = nav.offsetHeight + 'px';
+</script>
+
+</body>
+</html>
