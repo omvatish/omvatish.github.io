@@ -69,7 +69,7 @@ main,footer,nav{position:relative;z-index:1}
 .nav-logo{font-family:var(--font-head);font-weight:700;font-size:1.35rem;color:var(--text);letter-spacing:.02em}
 .nav-logo:hover{text-decoration:none}
 .nav-logo .dot{color:var(--accent)}
-.nav-links{display:flex;gap:1.6rem;list-style:none;margin-left:auto;align-items:center}
+.nav-links{display:flex;gap:1.15rem;list-style:none;margin-left:auto;align-items:center}
 .nav-links a{color:var(--muted);font-size:.94rem;font-weight:500}
 .nav-links a:hover,.nav-links a.active{color:var(--text);text-decoration:none}
 .nav-buttons{display:flex;gap:.7rem;margin-left:.4rem}
