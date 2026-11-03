@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>From Classroom to Field Service: Starting at Advance Business Systems — Om Vatish</title>
+  <meta name="description" content="Om Vatish on moving from St. Clair College networking labs to field service IT at Advance Business Systems in Windsor — WatchGuard firewalls, VMware ESXi, Synology NAS, remote support, and what real customer networks teach you."/>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/blog.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"/>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav">
+    <a href="../index.html" class="nav-logo">OV<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li class="nav-close-item"><button class="nav-close" id="nav-close" aria-label="close menu">✕ Close</button></li>
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#homelab">Home Lab</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+      <li class="nav-mobile-buttons">
+        <a href="../index.html#contact" class="btn-ghost">Get In Touch</a>
+        <a href="../resume.html" class="btn-primary">Resume</a>
+      </li>
+    </ul>
+    <div class="nav-buttons">
+      <a href="../index.html#contact" class="btn-ghost nav-resume">Get In Touch</a>
+      <a href="../resume.html" class="btn-primary nav-resume">Resume</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="blog-post">
+    <div class="blog-post-container">
+
+      <header class="post-header">
+        <a href="../blog.html" class="back-link">← Back to Blog</a>
+        <br><span class="blog-tag">Career</span>
+        <h1>From Classroom to Field Service: Starting at Advance Business Systems</h1>
+        <div class="post-meta">
+          <span>November 2026</span>
+          <span>Om Vatish</span>
+          <span>6 min read</span>
+        </div>
+      </header>
+
+      <article class="post-content">
+        <p class="lead">In July 2026 I started as a Field Service &amp; Sales Support / IT Technician at Advance Business Systems in Windsor. After two years of networking labs at St. Clair College — and two years of IT work at the college's Student Representative Council before and during that — I thought I knew what "real IT" would feel like. I was about half right.</p>
+
+        <h2>The lab never fights back. Production does.</h2>
+        <p>In a lab, the network is exactly as broken as the assignment says it is. In the field, a business network is a decade of decisions made by different people for forgotten reasons. VLANs that don't match the documentation. A firewall policy nobody remembers creating. A server doing three jobs it was never sized for. The skill that transfers from college isn't memorizing commands — it's <strong>troubleshooting method</strong>: isolate, test one variable, verify, document.</p>
+
+        <h2>What the work actually looks like</h2>
+        <p>No two days have matched so far. A typical stretch can include:</p>
+        <ul>
+          <li><strong>WatchGuard firewalls</strong> — policies, site-to-site BOVPN tunnels, VPN troubleshooting</li>
+          <li><strong>Servers and virtualization</strong> — Windows Server environments and VMware ESXi hosts</li>
+          <li><strong>Storage</strong> — Synology NAS systems, backups, and the occasional failing drive that becomes a data recovery job</li>
+          <li><strong>Workstations</strong> — deployments, domain joins, data migrations, and scripting the boring parts with PowerShell</li>
+          <li><strong>Remote support</strong> — TeamViewer and SyncroMSP sessions with customers who just want their problem gone</li>
+          <li><strong>The unexpected</strong> — wireless bridges between buildings, IP cameras that won't join a meeting, switches with opinions</li>
+        </ul>
+
+        <h2>The SRC years were the real internship</h2>
+        <p>Working IT for the Student Representative Council — first as a technician, then coordinating IT for the Nexus Gaming Arena and campus events — taught me the part college can't: <strong>customers</strong>. Explaining a problem without jargon. Staying calm when the event starts in twenty minutes and the tech doesn't work. Owning a difficult problem instead of escalating it into the void. Field service is that, with higher stakes and longer drives.</p>
+
+        <h2>What I'm doing differently now</h2>
+        <p><strong>Documenting everything.</strong> In my home lab, I'm the only one who pays for missing notes. At work, the next technician — or future me — inherits every undocumented change. <strong>Verifying with the customer, not just the console.</strong> A green status light is not the same as a person confirming their systems work. And <strong>automating the repeatable</strong>: if I've built the same workstation three times by hand, the fourth one is a script.</p>
+
+        <blockquote>The goal was never just to fix things. It's to leave every environment a little more reliable, a little more secure, and a little better documented than I found it.</blockquote>
+
+        <p>I'll be writing here about the interesting problems as they come up — anonymized, always, because customer networks are their business, not my content. First up: <a href="watchguard-vpn.html">the site-to-site VPN that stopped talking, and how it got fixed</a>.</p>
+      </article>
+
+      <div class="post-footer-nav">
+        <a href="../blog.html" class="btn-ghost">← All posts</a>
+        <a href="watchguard-vpn.html" class="btn-primary">Next: WatchGuard VPN →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 <strong>Om Vatish</strong> · Windsor, Ontario</p>
+      <p class="footer-sub">IT Technician · Advance Business Systems</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

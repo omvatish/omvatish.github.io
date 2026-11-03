@@ -1,296 +1,63 @@
+// Om Vatish — omvatish.ca (v2)
+// Nav state, mobile menu, scroll reveal, active section highlighting.
+// Everything is null-guarded so the same file works on every page.
+
 document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('nav');
 
-  /* ─── CURSOR ─────────────────────────────────────────── */
-  const cursor = document.getElementById('cursor');
-  const cursorTrail = document.getElementById('cursor-trail');
+  // Nav background on scroll
+  const onScroll = () => {
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 24);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-  if (cursor && window.matchMedia('(pointer: fine)').matches) {
-    let mouseX = 0, mouseY = 0, trailX = 0, trailY = 0;
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX; mouseY = e.clientY;
-      cursor.style.left = mouseX + 'px';
-      cursor.style.top = mouseY + 'px';
-    });
-    const animateCursor = () => {
-      trailX += (mouseX - trailX) * 0.12;
-      trailY += (mouseY - trailY) * 0.12;
-      cursorTrail.style.left = trailX + 'px';
-      cursorTrail.style.top = trailY + 'px';
-      requestAnimationFrame(animateCursor);
-    };
-    animateCursor();
-  }
-
-  /* ─── NAV SCROLL ─────────────────────────────────────── */
- const nav = document.getElementById('nav');
-
-const updateNav = () => {
-  if (window.scrollY > 5) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
-};
-
-window.addEventListener('scroll', updateNav);
-updateNav(); // run once on load to set correct state
-
-  /* ─── MOBILE NAV ─────────────────────────────────────── */
+  // Mobile menu
   const navToggle = document.getElementById('nav-toggle');
   const navLinks = document.querySelector('.nav-links');
   const navClose = document.getElementById('nav-close');
-
   const closeMenu = () => {
-    navLinks.classList.remove('open');
-    navToggle.classList.remove('active');
-    document.body.style.overflow = '';
+    if (navLinks) navLinks.classList.remove('open');
+    if (navToggle) navToggle.classList.remove('active');
   };
-  const openMenu = () => {
-    navLinks.classList.add('open');
-    navToggle.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  };
-
-  navToggle?.addEventListener('click', () => {
-    navLinks.classList.contains('open') ? closeMenu() : openMenu();
-  });
-  navClose?.addEventListener('click', closeMenu);
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  /* ─── SCROLL REVEAL ──────────────────────────────────── */
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const siblings = [...entry.target.parentElement.querySelectorAll('.reveal, .reveal-left, .reveal-right')];
-        const idx = siblings.indexOf(entry.target);
-        entry.target.style.transitionDelay = `${idx * 0.07}s`;
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.contains('open') ? closeMenu() : navLinks.classList.add('open');
+      navToggle.classList.toggle('active');
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  }
+  if (navClose) navClose.addEventListener('click', closeMenu);
+  document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', closeMenu));
 
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-    revealObserver.observe(el);
-  });
-
-  /* ─── GALLERY SCALE REVEAL ───────────────────────────── */
-  const scaleObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        scaleObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.reveal-scale').forEach(el => scaleObserver.observe(el));
-  /* ─── GALLERY LIGHTBOX ───────────────────────────────── */
-document.querySelectorAll('.gallery-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const img = item.querySelector('img');
-    const video = item.querySelector('video');
-    if (!img && !video) return;
-
-    // if it's a video, open it in lightbox too
-    if (video) {
-      const overlay = document.createElement('div');
-      overlay.style.cssText = `
-        position: fixed; inset: 0;
-        background: rgba(0,0,0,0.92);
-        backdrop-filter: blur(12px);
-        display: flex; align-items: center; justify-content: center;
-        z-index: 9999;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        padding: 2rem;
-      `;
-      const bigVideo = document.createElement('video');
-      bigVideo.src = video.querySelector('source').src;
-      bigVideo.autoplay = true;
-      bigVideo.loop = true;
-      bigVideo.muted = true;
-      bigVideo.playsInline = true;
-      bigVideo.controls = true;
-      bigVideo.style.cssText = `
-        max-width: 90vw;
-        max-height: 85vh;
-        border-radius: 12px;
-        box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-        transform: scale(0.95);
-        transition: transform 0.3s ease;
-      `;
-      const closeBtn = document.createElement('button');
-      closeBtn.innerHTML = '✕';
-      closeBtn.style.cssText = `
-        position: fixed; top: 1.5rem; right: 1.5rem;
-        width: 44px; height: 44px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.1);
-        border: 1px solid rgba(255,255,255,0.2);
-        color: white; font-size: 1.1rem;
-        cursor: pointer;
-        display: flex; align-items: center; justify-content: center;
-        transition: background 0.2s;
-        z-index: 10000;
-      `;
-      closeBtn.onmouseenter = () => closeBtn.style.background = 'rgba(0,229,255,0.2)';
-      closeBtn.onmouseleave = () => closeBtn.style.background = 'rgba(255,255,255,0.1)';
-      const close = () => {
-        overlay.style.opacity = '0';
-        setTimeout(() => overlay.remove(), 300);
-      };
-      closeBtn.addEventListener('click', close);
-      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); }, { once: true });
-      overlay.appendChild(bigVideo);
-      overlay.appendChild(closeBtn);
-      document.body.appendChild(overlay);
-      requestAnimationFrame(() => {
-        overlay.style.opacity = '1';
-        bigVideo.style.transform = 'scale(1)';
-      });
-      return;
-    }
-
-    if (!img) return;
-
-    const overlay = document.createElement('div');
-    overlay.style.cssText = `
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.92);
-      backdrop-filter: blur(12px);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 9999;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      padding: 2rem;
-    `;
-
-    const bigImg = document.createElement('img');
-    bigImg.src = img.src;
-    bigImg.alt = img.alt;
-    bigImg.style.cssText = `
-      max-width: 90vw;
-      max-height: 85vh;
-      object-fit: contain;
-      border-radius: 12px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-      transform: scale(0.95);
-      transition: transform 0.3s ease;
-    `;
-
-    const closeBtn = document.createElement('button');
-    closeBtn.innerHTML = '✕';
-    closeBtn.style.cssText = `
-      position: fixed; top: 1.5rem; right: 1.5rem;
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: white;
-      font-size: 1.1rem;
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-      z-index: 10000;
-    `;
-    closeBtn.onmouseenter = () => closeBtn.style.background = 'rgba(0,229,255,0.2)';
-    closeBtn.onmouseleave = () => closeBtn.style.background = 'rgba(255,255,255,0.1)';
-
-    const close = () => {
-      overlay.style.opacity = '0';
-      bigImg.style.transform = 'scale(0.95)';
-      setTimeout(() => overlay.remove(), 300);
-    };
-
-    closeBtn.addEventListener('click', close);
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) close();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') close();
-    }, { once: true });
-
-    overlay.appendChild(bigImg);
-    overlay.appendChild(closeBtn);
-    document.body.appendChild(overlay);
-
-    requestAnimationFrame(() => {
-      overlay.style.opacity = '1';
-      bigImg.style.transform = 'scale(1)';
-    });
-  });
-});
-
-  /* ─── HERO REVEAL ON LOAD ────────────────────────────── */
-  // Make hero visible immediately — don't rely on scroll observer for above-fold content
-  setTimeout(() => {
-    document.querySelectorAll('.hero .reveal, .hero .reveal-left, .hero .reveal-right').forEach((el, i) => {
-      setTimeout(() => {
-        el.style.transitionDelay = '0s';
-        el.classList.add('visible');
-      }, i * 130);
-    });
-  }, 100);
-
-/* ─── HERO NAME GLITCH ───────────────────────────────── */
-const heroName = document.querySelector('.hero-name');
-if (heroName) {
-  const glitchChars = '!@#$%^&*';
-  let isGlitching = false;
-
-  heroName.addEventListener('mouseenter', () => {
-    if (isGlitching) return;
-    isGlitching = true;
-
-    heroName.querySelectorAll('.accent-stroke').forEach(el => {
-      const orig = el.textContent;
-      let count = 0;
-
-      // Fix width so layout never shifts
-      el.style.minWidth = el.offsetWidth + 'px';
-      el.style.display = 'inline-block';
-
-      const iv = setInterval(() => {
-        count++;
-        if (count < 5) {
-          el.textContent = orig.split('').map(c =>
-            Math.random() > 0.6 ? glitchChars[Math.floor(Math.random() * glitchChars.length)] : c
-          ).join('');
-        } else {
-          el.textContent = orig;
-          clearInterval(iv);
-          isGlitching = false;
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
-      }, 80);
-    });
-  });
-}
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+    // Above-the-fold hero content shows immediately
+    document.querySelectorAll('.hero .reveal, .hero .reveal-left, .hero .reveal-right')
+      .forEach(el => el.classList.add('visible'));
+  } else {
+    revealEls.forEach(el => el.classList.add('visible'));
+  }
 
-  /* ─── PARALLAX HERO GLOWS ────────────────────────────── */
-  const glow1 = document.querySelector('.glow-1');
-  const glow2 = document.querySelector('.glow-2');
-  window.addEventListener('scroll', () => {
-    const s = window.scrollY;
-    if (glow1) glow1.style.transform = `translateY(${s * 0.3}px)`;
-    if (glow2) glow2.style.transform = `translateY(${-s * 0.2}px)`;
-  });
-
-  /* ─── ACTIVE NAV HIGHLIGHTING ────────────────────────── */
-  const navItems = document.querySelectorAll('.nav-links a');
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navItems.forEach(l => l.style.color = '');
-        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
-        if (active) active.style.color = 'var(--text)';
-      }
-    });
-  }, { threshold: 0.4 });
-
-  document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
-
+  // Active nav link for the section in view (same-page anchors only)
+  const sectionLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  if (sectionLinks.length && 'IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          sectionLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    document.querySelectorAll('section[id]').forEach(s => sectionObserver.observe(s));
+  }
 });

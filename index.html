@@ -3,462 +3,439 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Om Vatish — IT · Photography · Streaming</title>
+  <title>Om Vatish — IT Technician | Network & Systems Administration | Windsor, Ontario</title>
+  <meta name="description" content="Om Vatish is a Field Service & Sales Support / IT Technician at Advance Business Systems in Windsor, Ontario. Networking, WatchGuard firewalls, VMware ESXi, Windows Server, Synology NAS, VPNs and IT automation."/>
+  <meta property="og:title" content="Om Vatish — IT Technician, Windsor Ontario"/>
+  <meta property="og:description" content="Field Service & IT Technician at Advance Business Systems. Network & systems administration, infrastructure & virtualization, technical support."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://omvatish.ca/"/>
+  <meta property="og:image" content="https://omvatish.ca/images/Main1.jpg"/>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
   <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-  <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png"/>
-  <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png"/>
 </head>
-  
 <body>
 
-  <!-- ─── DEV BANNER ─────────────────────────────────────── -->
-  <div id="dev-banner">
-  <div class="banner-inner">
-    <span class="banner-icon">⚠</span>
-    <span class="banner-text">Site under construction — Projects &amp; Blog coming soon</span>
-  </div>
-</div>
-
-  <!-- ─── CURSOR ─────────────────────────────────────────── -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-trail" id="cursor-trail"></div>
-
-  <!-- ─── NAV ────────────────────────────────────────────── -->
+  <!-- ─── NAV ─── -->
   <nav class="nav" id="nav">
-    <a href="#home" class="nav-logo">OV<span class="dot">.</span></a>
+    <a href="index.html" class="nav-logo">OV<span class="dot">.</span></a>
     <ul class="nav-links">
       <li class="nav-close-item"><button class="nav-close" id="nav-close" aria-label="close menu">✕ Close</button></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#blog">Blog</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#homelab">Home Lab</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="#contact">Contact</a></li>
       <li class="nav-mobile-buttons">
         <a href="#contact" class="btn-ghost">Get In Touch</a>
-        <a href="resume.html" class="btn-primary" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="resume.html" class="btn-primary">Resume</a>
       </li>
     </ul>
     <div class="nav-buttons">
       <a href="#contact" class="btn-ghost nav-resume">Get In Touch</a>
-      <a href="resume.html" class="btn-primary nav-resume" target="_blank" rel="noopener noreferrer">Resume</a>
+      <a href="resume.html" class="btn-primary nav-resume">Resume</a>
     </div>
     <button class="nav-toggle" id="nav-toggle" aria-label="toggle menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <!-- ─── HERO ────────────────────────────────────────────── -->
-  <section class="hero" id="home">
-    <div class="hero-bg">
-      <div class="grid-overlay"></div>
-      <div class="glow glow-1"></div>
-      <div class="glow glow-2"></div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow reveal">Hello, I'm</p>
-      <h1 class="hero-name reveal">
-        <span class="line">OM</span>
-        <span class="line accent-stroke">VATISH.</span>
-      </h1>
-      <div class="hero-tags reveal">
-        <span class="tag">🌐 Networking Student</span>
-        <span class="tag">📷 Photographer</span>
-        <span class="tag">🎮 Gamer</span>
-        <span class="tag">🎥 Content Creator</span>
-      </div>
-      <p class="hero-sub reveal">3rd Year Networking Student · Visual Storyteller · Digital Native</p>
-      <div class="hero-cta reveal">
-        <a href="#projects" class="btn-primary">See My Work</a>
-      </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ─── ABOUT ───────────────────────────────────────────── -->
-  <section class="about section" id="about">
+  <main>
+  <!-- ─── HERO ─── -->
+  <header class="hero" id="home">
     <div class="container">
+      <div class="hero-grid">
+        <div>
+          <p class="hero-eyebrow reveal"><span class="pulse"></span> Advance Business Systems · Windsor, Ontario</p>
+          <h1 class="hero-name reveal">Om <span class="accent-stroke">Vatish</span></h1>
+          <p class="hero-role reveal">Field Service &amp; Sales Support / IT Technician</p>
+          <p class="hero-sub reveal">I support business IT environments end to end — networks, firewalls, servers, workstations and the people who depend on them. IT Technician focused on network &amp; systems administration, infrastructure &amp; virtualization, and technical support that actually solves the problem.</p>
+          <ul class="hero-tags reveal">
+            <li>WatchGuard Firebox</li><li>Cisco Networking</li><li>VMware ESXi</li>
+            <li>Windows Server</li><li>Synology NAS</li><li>VPN / BOVPN</li><li>PowerShell Automation</li>
+          </ul>
+          <div class="hero-cta reveal">
+            <a href="#projects" class="btn-primary large">Explore My Projects</a>
+            <a href="#experience" class="btn-ghost large">View Experience</a>
+            <a href="#contact" class="btn-ghost large">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-photo reveal">
+          <img src="images/Main1.jpg" alt="Om Vatish, IT Technician in Windsor, Ontario"/>
+          <div class="hero-photo-card">
+            <strong>Om Vatish</strong>
+            <span>IT Technician · Windsor, Ontario, Canada</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat reveal"><strong>Advance Business Systems</strong><span>Field Service &amp; IT Technician — July 2026 to present</span></div>
+        <div class="stat reveal"><strong>Advanced Diploma</strong><span>Computer Systems Networking &amp; Telecommunications, St. Clair College (2024–2026)</span></div>
+        <div class="stat reveal"><strong>SRC — St. Clair College</strong><span>IT Technician, then IT Coordinator — from May 2024</span></div>
+        <div class="stat reveal"><strong>Proxmox Home Lab</strong><span>Self-hosted virtualization lab, running and evolving since college</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── ABOUT ─── -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section-label reveal">/ About</p>
+      <h2 class="section-title reveal">Hands-on IT, <em>learned by doing</em></h2>
       <div class="about-grid">
         <div class="about-image-wrap reveal-left">
-          <div class="about-img-placeholder">
-            <div class="img-glow-wrap">
-              <img src="images/Main1.jpg" alt="Om Vatish">
-            </div>
-          </div>
+          <img src="images/homelab.jpg" alt="Om Vatish's Proxmox home lab"/>
         </div>
         <div class="about-text reveal-right">
-          <p class="section-label">/ About Me</p>
-          <h2>Tech meets <em>Creativity</em>.</h2>
-          <p>
-            I'm a 3rd-year <strong>Networking &amp; IT student</strong> who lives at the intersection of technology and visual art.
-            When I'm not deep in subnets and protocols, I'm behind a lens capturing moments, editing videos, or streaming my gaming sessions.
-          </p>
-          <p>
-            I believe the best digital experiences come from people who understand both the <strong>infrastructure</strong> that powers the web and the <strong>creative vision</strong> that makes it worth visiting.
-          </p>
-          <div class="about-stats">
-            <div class="stat"><span class="stat-num">3rd</span><span class="stat-label">Year IT</span></div>
-            <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Shots Fired</span></div>
-            <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Online</span></div>
-          </div>
+          <p>I am an IT professional based in <strong>Windsor, Ontario</strong>, with an Advanced Diploma in Computer Systems Networking and Telecommunications from St. Clair College.</p>
+          <p>Currently working as a <strong>Field Service and Sales Support / IT Technician at Advance Business Systems</strong>, I support business IT environments through network troubleshooting, server administration, firewall configuration, workstation deployment, remote support, and infrastructure maintenance.</p>
+          <p>My hands-on experience includes <strong>WatchGuard firewalls, Cisco networking equipment, VMware ESXi, Microsoft Windows environments, Synology NAS systems, VPN technologies</strong>, and IT service management platforms.</p>
+          <p>I enjoy solving complex technical problems, improving existing infrastructure, and exploring technologies that make IT environments more reliable, secure, and efficient. Beyond day-to-day support, I'm particularly interested in infrastructure modernization, virtualization, automation, and building scalable IT solutions.</p>
+          <ul class="strength-list">
+            <li>Persistent problem-solving</li>
+            <li>Independent troubleshooting</li>
+            <li>Hands-on learning</li>
+            <li>Customer communication</li>
+            <li>Technical adaptability</li>
+            <li>Ownership of difficult problems</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── SKILLS ──────────────────────────────────────────── -->
-  <section class="skills section" id="skills">
+  <!-- ─── EXPERIENCE ─── -->
+  <section class="section alt" id="experience">
     <div class="container">
-      <p class="section-label center reveal">/ What I Do</p>
-      <h2 class="section-title center reveal">Skills &amp; <em>Expertise</em></h2>
-      <div class="skills-grid">
-
-        <div class="skill-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6M3 12h3m12 0h3"/></svg>
-          </div>
-          <h3>Networking &amp; IT</h3>
-          <p>Routing, switching, TCP/IP, subnetting, network security, and infrastructure design. Currently working toward certifications.</p>
-          <ul class="skill-tags">
-            <li>Cisco IOS</li><li>Wireshark</li><li>Linux</li><li>TCP/IP</li>
-          </ul>
-        </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"/></svg>
-          </div>
-          <h3>Photography</h3>
-          <p>Landscape, street, and event photography. Comfortable with both shooting and post-processing to tell visual stories.</p>
-          <ul class="skill-tags">
-            <li>Lightroom</li><li>Photoshop</li><li>Composition</li><li>Editing</li>
-          </ul>
-        </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z"/></svg>
-          </div>
-          <h3>Videography</h3>
-          <p>Video production from pre-production through final cut — cinematic shoots, reels, and long-form content.</p>
-          <ul class="skill-tags">
-            <li>Premiere Pro</li><li>After Effects</li><li>DaVinci</li><li>Color Grading</li>
-          </ul>
-        </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12a.75.75 0 0 1-.75-.75v-3a.75.75 0 0 1 1.5 0v3A.75.75 0 0 1 6 12Zm12 0a.75.75 0 0 1-.75-.75v-3a.75.75 0 0 1 1.5 0v3A.75.75 0 0 1 18 12Zm-6 7.5a.75.75 0 0 1-.75-.75V15a.75.75 0 0 1 1.5 0v3.75a.75.75 0 0 1-.75.75ZM3.75 9.75a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0Zm12 0a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0ZM9.75 15a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0Z"/></svg>
-          </div>
-          <h3>Gaming &amp; Streaming</h3>
-          <p>Content creation around gaming — live streaming, VOD editing, overlays, and building community experiences.</p>
-          <ul class="skill-tags">
-            <li>OBS Studio</li><li>Twitch/YT</li><li>Stream Design</li><li>Clip Editing</li>
-          </ul>
-        </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"/></svg>
-          </div>
-          <h3>Development</h3>
-          <p>Web front-end basics, scripting, and automation. Building tools and pages like this one to showcase and solve problems.</p>
-          <ul class="skill-tags">
-            <li>HTML/CSS</li><li>JavaScript</li><li>Python</li><li>Git</li>
-          </ul>
-        </div>
-
-        <div class="skill-card reveal">
-          <div class="skill-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"/></svg>
-          </div>
-          <h3>Content &amp; Blogging</h3>
-          <p>Writing about tech, gear reviews, tutorials, and my experiences at the crossroads of IT and creative work.</p>
-          <ul class="skill-tags">
-            <li>Tutorials</li><li>Reviews</li><li>Tech Blogs</li><li>Guides</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── TIMELINE ─────────────────────────────────────── -->
-  <section class="timeline-section section" id="timeline">
-    <div class="container">
-      <p class="section-label center reveal">/ My Journey</p>
-      <h2 class="section-title center reveal">What I've Been <em>Up To</em></h2>
+      <p class="section-label reveal">/ Experience</p>
+      <h2 class="section-title reveal">Where I've <em>worked</em></h2>
+      <p class="section-sub reveal">Real business environments, real customers, real problems — from managed IT services across Windsor to running campus IT operations.</p>
       <div class="timeline">
 
-        <div class="timeline-item reveal" data-year="2025">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">Sep 2025 — Present</span>
-            <h3>In the Final Year</h3>
-            <p>Deep in advanced routing protocols, network security, and infrastructure design. Building labs in Packet Tracer, chasing certs.</p>
-            <div class="timeline-tags"><span>CCNA Track</span><span>Security</span></div>
+        <article class="role-card reveal">
+          <div class="role-head">
+            <h3>Field Service &amp; Sales Support / IT Technician</h3>
+            <span class="role-date">July 2026 — Present</span>
           </div>
-        </div>
+          <p class="role-org">Advance Business Systems (ABS) · Windsor, Ontario</p>
+          <p>Supporting business IT environments for a managed IT services provider — on-site field service and remote support across networking, servers, firewalls, storage and endpoints, working directly with business customers.</p>
+          <div class="resp-grid">
+            <div class="resp"><h4>IT Support</h4><p>Diagnose and resolve hardware, software, operating system, and connectivity issues.</p></div>
+            <div class="resp"><h4>Network Administration</h4><p>Configure and troubleshoot switches, VLANs, routers, firewalls, and business networks.</p></div>
+            <div class="resp"><h4>Firewall Management</h4><p>Configure WatchGuard Firebox appliances, security policies, and VPN connectivity.</p></div>
+            <div class="resp"><h4>Server Administration</h4><p>Work with Windows Server environments, VMware ESXi, and virtual machines.</p></div>
+            <div class="resp"><h4>Remote Support</h4><p>Assist customers using TeamViewer, SyncroMSP, and other remote support tools.</p></div>
+            <div class="resp"><h4>Workstation Deployment</h4><p>Configure computers, install applications, join domains, and migrate user data.</p></div>
+            <div class="resp"><h4>Backup &amp; Recovery</h4><p>Troubleshoot storage failures, perform data recovery, and work with NAS backups.</p></div>
+            <div class="resp"><h4>Cybersecurity</h4><p>Troubleshoot security-related issues, firewall access, VPNs, and endpoint protection.</p></div>
+            <div class="resp"><h4>Client Support</h4><p>Communicate directly with business customers and coordinate technical service.</p></div>
+            <div class="resp"><h4>IT Documentation</h4><p>Document troubleshooting, configurations, service activities, and project progress.</p></div>
+            <div class="resp"><h4>Infrastructure Projects</h4><p>Support network upgrades, server modernization, and system migrations.</p></div>
+            <div class="resp"><h4>Automation</h4><p>Develop scripts and explore tools to streamline IT operations.</p></div>
+          </div>
+        </article>
 
-        <div class="timeline-item reveal" data-year="2025">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">Nov 2025</span>
-            <h3>Launched Streaming &amp; Content Creation</h3>
-            <p>Set up a full streaming rig with OBS. Started creating gaming content, designing stream overlays, and building an audience.</p>
-            <div class="timeline-tags"><span>Gaming</span><span>Streaming</span></div>
+        <article class="role-card reveal">
+          <div class="role-head">
+            <h3>IT Coordinator</h3>
+            <span class="role-date">From May 2025</span>
           </div>
-        </div>
+          <p class="role-org">Student Representative Council (SRC) · St. Clair College</p>
+          <p>Coordinating IT operations for student services and facilities, including the Nexus Gaming Arena and campus events — planning technology for events, supporting staff and students, and helping other team members deliver reliable IT.</p>
+          <ul class="role-list">
+            <li>Coordinate IT operations across student facilities</li>
+            <li>Plan and fulfil technology requirements for college events</li>
+            <li>Support audiovisual systems and live event technology</li>
+            <li>Assist with team task assignment and service standards</li>
+          </ul>
+        </article>
 
-        <div class="timeline-item reveal" data-year="2024">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">Sep 2024</span>
-            <h3>Started Photography &amp; Videography</h3>
-            <p>Picked up a camera and never looked back. Started shooting landscapes, events, and street scenes. Built a Lightroom workflow and began posting content online.</p>
-            <div class="timeline-tags"><span>Photography</span><span>Video</span></div>
+        <article class="role-card reveal">
+          <div class="role-head">
+            <h3>IT Technician</h3>
+            <span class="role-date">May 2024 — May 2025</span>
           </div>
-        </div>
-
-        <div class="timeline-item reveal" data-year="2024">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <span class="timeline-year">May 2024</span>
-            <h3>Started IT Program</h3>
-            <p>Got enrolled in Computer Systems Networking - Technician. First exposure to Cisco IOS, TCP/IP fundamentals, and Linux. Immediately hooked.</p>
-            <div class="timeline-tags"><span>IT</span><span>Linux</span></div>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal" data-year="now">
-          <div class="timeline-dot active"></div>
-          <div class="timeline-content highlight">
-            <span class="timeline-year now-label">Right Now!</span>
-            <h3>Learning, Shooting, Streaming</h3>
-            <p>All three lanes running at once. Looking for internships, collabs, and cool projects to work on.</p>
-            <div class="timeline-tags"><span>Open to Work</span><span>Collabs Welcome</span></div>
-          </div>
-        </div>
+          <p class="role-org">Student Representative Council (SRC) · St. Clair College</p>
+          <p>Front-line IT support for students and staff across the Nexus Gaming Arena, computer labs, and student services — where my professional IT career started, a full two years before ABS.</p>
+          <ul class="role-list">
+            <li>Hardware, software, printer, and network support</li>
+            <li>Installed and maintained PCs, gaming systems, and peripherals</li>
+            <li>Workstation setup, account access, and troubleshooting</li>
+            <li>IT asset management, usage logs, and equipment setup</li>
+            <li>Supported event technology and campus activities</li>
+            <li>Onboarding support for staff and student teams</li>
+          </ul>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ─── GALLERY ──────────────────────────────────────────── -->
-  <section class="gallery section" id="gallery">
+  <!-- ─── PROJECTS ─── -->
+  <section class="section" id="projects">
     <div class="container">
-      <p class="section-label center reveal">/ Visual Work</p>
-      <h2 class="section-title center reveal">Through the <em>Lens</em></h2>
-      <div class="gallery-grid">
-        <div class="gallery-item tall reveal-scale" style="--d:0s"><div class="gallery-placeholder"><img src="images/IMG1.JPG" alt="plane"></div></div>
-        <div class="gallery-item reveal-scale" style="--d:0.1s"><div class="gallery-placeholder"><img src="images/IMG2.jpg" alt="portrait"></div></div>
-        <div class="gallery-item reveal-scale" style="--d:0.2s"><div class="gallery-placeholder"><video autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover; display:block;"><source src="images/mosaic.mp4" type="video/mp4"></video></div></div>
-        <div class="gallery-item wide reveal-scale" style="--d:0.2s"><div class="gallery-placeholder"><img src="images/IMG4.jpg" alt="portrait"></div></div>
-        <div class="gallery-item reveal-scale" style="--d:0.25s"><div class="gallery-placeholder"><img src="images/IMG5.JPG" alt="portrait"></div></div>
-        <div class="gallery-item reveal-scale" style="--d:0.3s"><div class="gallery-placeholder"><img src="images/IMG6.jpg" alt="portrait"></div></div>
-        <div class="gallery-item reveal-scale" style="--d:0.35s"><div class="gallery-placeholder"><img src="images/IMG8.jpg" alt="portrait"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── PROJECTS ─────────────────────────────────────────── -->
-  <section class="projects section" id="projects">
-    <div class="container">
-      <p class="section-label center reveal">/ My Work</p>
-      <h2 class="section-title center reveal">Featured <em>Projects</em></h2>
+      <p class="section-label reveal">/ Projects</p>
+      <h2 class="section-title reveal">Work that <em>shipped</em> — and work in progress</h2>
+      <p class="section-sub reveal">Professional projects from Advance Business Systems, anonymized — no customer names, addresses, or internal details. Statuses are honest: completed means completed, planning means planning.</p>
       <div class="projects-list">
 
-        <div class="project-card reveal">
-          <div class="project-meta">
-            <span class="project-num">01</span>
-            <span class="project-type">Networking</span>
-          </div>
-          <div class="project-body">
-            <h3>Project Title Here</h3>
-            <p>Brief description of this project. What it does, what you learned, why it matters. Keep it punchy and clear.</p>
-            <div class="project-stack">
-              <span>Cisco Packet Tracer</span><span>VLANs</span><span>OSPF</span>
-            </div>
-          </div>
-          <a href="#" class="project-link" aria-label="View project">→</a>
-        </div>
+        <article class="project-card reveal">
+          <div class="project-meta"><span class="project-num">01</span><span class="badge done">Completed</span></div>
+          <p class="project-type">Firewalls · VPN</p>
+          <h3>Multi-Site Firewall &amp; VPN Connectivity</h3>
+          <p class="project-body">Configured and troubleshot site-to-site VPN connectivity between two business locations — WatchGuard Cloud and Firebox configuration, VPN negotiation and authentication problems, verified end to end.</p>
+          <ul class="project-stack"><li>WatchGuard Firebox</li><li>BOVPN</li><li>IKEv2</li><li>Routing</li></ul>
+          <a class="project-link" href="projects.html#vpn">Project details →</a>
+        </article>
 
-        <div class="project-card reveal">
-          <div class="project-meta">
-            <span class="project-num">02</span>
-            <span class="project-type">Photography</span>
-          </div>
-          <div class="project-body">
-            <h3>Photo Series / Album Name</h3>
-            <p>A short series exploring [theme]. Shot over [timeframe] with [camera/lens]. Tell the story behind the shoot.</p>
-            <div class="project-stack">
-              <span>Lightroom</span><span>Photoshop</span><span>35mm equiv</span>
-            </div>
-          </div>
-          <a href="#" class="project-link" aria-label="View project">→</a>
-        </div>
+        <article class="project-card reveal">
+          <div class="project-meta"><span class="project-num">02</span><span class="badge progress">ABS Project</span></div>
+          <p class="project-type">Networking · Migration</p>
+          <h3>Business Network Firewall Migration</h3>
+          <p class="project-body">Replacing an existing firewall with a WatchGuard appliance — investigating internet connectivity problems involving managed switches, VLAN configuration, routing and DHCP.</p>
+          <ul class="project-stack"><li>WatchGuard</li><li>Cisco</li><li>VLANs</li><li>DHCP</li></ul>
+          <a class="project-link" href="projects.html#firewall-migration">Project details →</a>
+        </article>
 
-        <div class="project-card reveal">
-          <div class="project-meta">
-            <span class="project-num">03</span>
-            <span class="project-type">Streaming / Video</span>
-          </div>
-          <div class="project-body">
-            <h3>YouTube / Twitch Channel</h3>
-            <p>Content creation around gaming and tech. Stream overlays, highlight reels, thumbnail design — the full package.</p>
-            <div class="project-stack">
-              <span>OBS</span><span>Premiere Pro</span><span>Twitch</span>
-            </div>
-          </div>
-          <a href="#" class="project-link" aria-label="View channel">→</a>
-        </div>
+        <article class="project-card reveal">
+          <div class="project-meta"><span class="project-num">03</span><span class="badge progress">ABS Project</span></div>
+          <p class="project-type">Wireless · Surveillance</p>
+          <h3>Wireless Surveillance Network Deployment</h3>
+          <p class="project-body">Wireless infrastructure connecting multiple buildings — bridge and station configuration, surveillance network connectivity and NVR integration, camera discovery troubleshooting.</p>
+          <ul class="project-stack"><li>Ubiquiti LiteAP</li><li>NanoStation</li><li>PoE</li><li>Hikvision</li></ul>
+          <a class="project-link" href="projects.html#surveillance">Project details →</a>
+        </article>
 
-        <div class="project-card reveal">
-          <div class="project-meta">
-            <span class="project-num">04</span>
-            <span class="project-type">Dev / Web</span>
-          </div>
-          <div class="project-body">
-            <h3>Another Project</h3>
-            <p>Add any other projects here — scripts, automation tools, websites, or anything else you've built or contributed to.</p>
-            <div class="project-stack">
-              <span>Python</span><span>GitHub</span><span>HTML/CSS</span>
-            </div>
-          </div>
-          <a href="#" class="project-link" aria-label="View project">→</a>
-        </div>
+        <article class="project-card reveal">
+          <div class="project-meta"><span class="project-num">04</span><span class="badge planning">Planning &amp; Assessment</span></div>
+          <p class="project-type">Servers · Modernization</p>
+          <h3>Server &amp; Business Application Modernization</h3>
+          <p class="project-body">Planning a business server and application upgrade — reviewing existing infrastructure and requirements, coordinating initial technical assessments with customer contacts.</p>
+          <ul class="project-stack"><li>VMware ESXi</li><li>Windows Server</li><li>Synology</li></ul>
+          <a class="project-link" href="projects.html#modernization">Project details →</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-meta"><span class="project-num">05</span><span class="badge progress">Ongoing Evaluation</span></div>
+          <p class="project-type">Backup · Virtualization</p>
+          <h3>Backup Infrastructure &amp; Virtualization Assessment</h3>
+          <p class="project-body">Working with existing virtual machine backups, evaluating restoration and migration options, and investigating NAS-based infrastructure to improve backup management and recovery.</p>
+          <ul class="project-stack"><li>Synology NAS</li><li>VMware</li><li>Backups</li></ul>
+          <a class="project-link" href="projects.html#backup-assessment">Project details →</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-meta"><span class="project-num">06</span><span class="badge progress">ABS Project</span></div>
+          <p class="project-type">Automation · Endpoints</p>
+          <h3>Workstation Deployment &amp; IT Automation</h3>
+          <p class="project-body">Developing and refining workstation provisioning scripts — automating software installation and configuration, remote management agents, domain joining, naming, and Windows updates.</p>
+          <ul class="project-stack"><li>PowerShell</li><li>SyncroMSP</li><li>Active Directory</li></ul>
+          <a class="project-link" href="projects.html#automation">Project details →</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-meta"><span class="project-num">07</span><span class="badge planning">Design &amp; Planning</span></div>
+          <p class="project-type">Service Desk · Workflow</p>
+          <h3>IT Service Desk Workflow Improvement</h3>
+          <p class="project-body">Analyzing an email-based service request workflow, identifying inefficiencies in ticket handling and service-call creation, and designing a more centralized ticketing and assignment process.</p>
+          <ul class="project-stack"><li>SyncroMSP</li><li>eAutomate</li><li>MobileTech</li><li>Teams</li></ul>
+          <a class="project-link" href="projects.html#service-desk">Project details →</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-meta"><span class="project-num">08</span><span class="badge progress">ABS Project</span></div>
+          <p class="project-type">AV · IP Cameras</p>
+          <h3>Office Video &amp; Camera Integration</h3>
+          <p class="project-body">Configuring and testing IP camera streaming into video conferencing — troubleshooting video quality, latency and encoding, and testing approaches to improve office meeting video.</p>
+          <ul class="project-stack"><li>Axis</li><li>Bosch</li><li>RTSP</li><li>OBS Studio</li><li>Teams</li></ul>
+          <a class="project-link" href="projects.html#video-integration">Project details →</a>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-meta"><span class="project-num">09</span><span class="badge progress">In Progress</span></div>
+          <p class="project-type">Storage · Data Recovery</p>
+          <h3>Storage Failure &amp; Data Recovery</h3>
+          <p class="project-body">Diagnosing a failing SSD and recovering accessible user files to alternate storage, working through multiple disk imaging and Linux recovery tools at a low level.</p>
+          <ul class="project-stack"><li>ddrescue</li><li>Clonezilla</li><li>Rescuezilla</li><li>SystemRescue</li></ul>
+          <a class="project-link" href="projects.html#data-recovery">Project details →</a>
+        </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ─── BLOG ─────────────────────────────────────────────── -->
-  <section class="blog section" id="blog">
+  <!-- ─── SKILLS ─── -->
+  <section class="section alt" id="skills">
     <div class="container">
-      <p class="section-label center reveal">/ Thoughts</p>
-      <h2 class="section-title center reveal">Latest <em>Posts</em></h2>
-      <div class="blog-grid">
-
-        <article class="blog-card reveal">
-          <div class="blog-img-placeholder"><img src="images/homelab.jpg" alt"homelab picture"></div>
-          <div class="blog-content">
-            <span class="blog-tag">Networking</span>
-            <h3><a href="blog/Networking Blog.html">Building My Homelab as a Networking Student</a></h3>
-            <p>How I turned a small PC into a real-world IT learning environment</p>
-            <div class="blog-meta">
-              <span>📅 Jan 2025</span>
-              <span>5 min read</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="blog-card reveal">
-          <div class="blog-img-placeholder"><img src="images/IMG6.jpg" alt="portrait"></div>
-          <div class="blog-content">
-            <span class="blog-tag">Photography</span>
-            <h3><a href="blog/Polarplunge.html">Behind the Lens: Polar Plunge Windsor 2026</a></h3>
-            <p>Coverage of Polar Plunge Windsor 2026, documenting community impact and contributing event photography featured in local media.</p>
-            <div class="blog-meta">
-              <span>📅 Feb 2025</span>
-              <span>4 min read</span>
-            </div>
-          </div>
-        </article>
-
-        <article class="blog-card reveal">
-          <div class="blog-img-placeholder"><span>Post Image</span></div>
-          <div class="blog-content">
-            <span class="blog-tag">Gaming</span>
-            <h3><a href="blog/post-3.html">Third Post Title Here</a></h3>
-            <p>Short preview. Could be a gear review, game review, tutorial, or personal experience...</p>
-            <div class="blog-meta">
-              <span>📅 Mar 2025</span>
-              <span>3 min read</span>
-            </div>
-          </div>
-        </article>
-
+      <p class="section-label reveal">/ Skills</p>
+      <h2 class="section-title reveal">Technical <em>skills</em></h2>
+      <p class="section-sub reveal">The technologies I work with on service calls, in server rooms, and in my own lab.</p>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3>Networking &amp; Security</h3>
+          <ul class="skill-tags"><li>Cisco Switches</li><li>WatchGuard Firebox</li><li>VLANs</li><li>TCP/IP</li><li>DHCP</li><li>DNS</li><li>Routing</li><li>NAT</li><li>BOVPN</li><li>IKEv2</li><li>SSL VPN</li><li>WireGuard</li><li>Tailscale</li><li>Network Diagnostics</li></ul>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Servers &amp; Virtualization</h3>
+          <ul class="skill-tags"><li>VMware ESXi</li><li>vSphere</li><li>Proxmox VE</li><li>Windows Server</li><li>Linux</li><li>Virtual Machines</li><li>LXC Containers</li><li>Active Directory</li><li>Domain Environments</li></ul>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Storage, Backup &amp; Recovery</h3>
+          <ul class="skill-tags"><li>Synology NAS</li><li>SMB</li><li>Disk Imaging</li><li>Clonezilla</li><li>Rescuezilla</li><li>SystemRescue</li><li>ddrescue</li><li>Backup Restoration</li><li>Storage Troubleshooting</li></ul>
+        </div>
+        <div class="skill-card reveal">
+          <h3>IT Support &amp; Management</h3>
+          <ul class="skill-tags"><li>Windows 10 / 11</li><li>Microsoft 365</li><li>SyncroMSP</li><li>TeamViewer</li><li>ECI eAutomate</li><li>MobileTech</li><li>Windows Troubleshooting</li><li>Workstation Provisioning</li></ul>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Automation &amp; Development</h3>
+          <ul class="skill-tags"><li>PowerShell</li><li>Python</li><li>Windows Batch</li><li>Docker</li><li>Docker Compose</li><li>Infrastructure Automation</li><li>Deployment Scripting</li></ul>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Surveillance &amp; Wireless</h3>
+          <ul class="skill-tags"><li>Ubiquiti LiteAP</li><li>NanoStation</li><li>Hikvision NVR</li><li>Axis Cameras</li><li>Bosch Cameras</li><li>RTSP</li><li>PoE Networking</li><li>OBS Studio</li></ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── CONTACT ──────────────────────────────────────────── -->
-  <section class="contact section" id="contact">
+  <!-- ─── EDUCATION ─── -->
+  <section class="section" id="education">
+    <div class="container">
+      <p class="section-label reveal">/ Education</p>
+      <h2 class="section-title reveal">Education &amp; <em>coursework</em></h2>
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <h3>Advanced Diploma — Computer Systems Networking &amp; Telecommunications</h3>
+          <p class="org">St. Clair College · 2024 — 2026 · Grade A</p>
+          <p>Focus on Cisco networking, Windows Server, Linux systems, and IT security — backed by hands-on labs and a capstone enterprise network design.</p>
+          <ul>
+            <li>Enterprise VLAN and routing design projects</li>
+            <li>Cisco Packet Tracer networks using OSPF, ACLs, and NAT</li>
+            <li>Secure Linux SFTP servers with SSH keys and chroot jailing</li>
+            <li>Virtualization and server administration labs</li>
+          </ul>
+        </div>
+        <div class="edu-card reveal">
+          <h3>Cisco Networking Academy</h3>
+          <p class="org">Coursework Completed</p>
+          <ul>
+            <li>CCNA: Introduction to Networks</li>
+            <li>CCNA: Switching, Routing &amp; Wireless Essentials</li>
+            <li>CCNA: Enterprise Networking, Security &amp; Automation</li>
+          </ul>
+          <p class="edu-note">These are completed Cisco Networking Academy courses — coursework, not a CCNA certification.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── HOME LAB ─── -->
+  <section class="section alt" id="homelab">
+    <div class="container">
+      <p class="section-label reveal">/ Home Lab</p>
+      <h2 class="section-title reveal">Enterprise-style home lab &amp; <em>self-hosted infrastructure</em></h2>
+      <p class="section-sub reveal">A personal project — not a work deployment. This is where I break things on purpose, so I break fewer things at work.</p>
+      <div class="homelab-grid">
+        <div class="reveal-left">
+          <img src="images/homelab.jpg" alt="Proxmox VE home lab on a Lenovo ThinkCentre mini PC"/>
+        </div>
+        <div class="homelab-copy reveal-right">
+          <p>Built on a <strong style="color:var(--text)">Lenovo ThinkCentre mini PC</strong> running <strong style="color:var(--text)">Proxmox VE</strong>, with external 8&nbsp;TB storage and a Buffalo NAS — a compact virtualization lab that runs my own services full-time.</p>
+          <p>Designing and administering virtualized environments, deploying containerized services with Docker and LXC, configuring container networking and storage mounts, VPN connectivity and secure remote access, reverse proxies, backups and NAS integration — plus the unglamorous parts: Linux permissions, failing services, and hardware troubleshooting at 1&nbsp;a.m.</p>
+          <ul class="service-cloud">
+            <li>Proxmox VE</li><li>Docker</li><li>LXC</li><li>Jellyfin</li><li>Sonarr</li><li>Radarr</li>
+            <li>Prowlarr</li><li>Bazarr</li><li>qBittorrent</li><li>Nextcloud</li><li>Home Assistant</li>
+            <li>Pi-hole</li><li>Caddy</li><li>Portainer</li><li>Uptime Kuma</li><li>WireGuard</li><li>Tailscale</li>
+          </ul>
+          <a href="blog/Networking%20Blog.html" class="btn-ghost">Read the home lab story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY ─── -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <p class="section-label reveal">/ Off the Clock</p>
+      <h2 class="section-title reveal">Through the <em>lens</em></h2>
+      <p class="section-sub reveal">IT is the career; photography is the other craft. I shoot events and stories around Windsor — including published coverage for windsorite.ca.</p>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal-scale"><div class="gallery-placeholder"><img src="images/IMG1.JPG" alt="Photography by Om Vatish"/></div></div>
+        <div class="gallery-item reveal-scale"><div class="gallery-placeholder"><img src="images/IMG2.jpg" alt="Photography by Om Vatish"/></div></div>
+        <div class="gallery-item reveal-scale"><div class="gallery-placeholder"><img src="images/IMG4.jpg" alt="Photography by Om Vatish"/></div></div>
+        <div class="gallery-item reveal-scale"><div class="gallery-placeholder"><img src="images/IMG5.JPG" alt="Photography by Om Vatish"/></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BLOG ─── -->
+  <section class="section alt" id="blog">
+    <div class="container">
+      <p class="section-label reveal">/ Blog</p>
+      <h2 class="section-title reveal">Notes from the <em>field</em></h2>
+      <p class="section-sub reveal">What I'm learning at work and in the lab — new tech, stubborn problems, and how they actually got solved. <a href="blog.html">Browse all posts →</a></p>
+      <div class="blog-grid">
+        <article class="blog-card reveal">
+          <span class="blog-tag">Career</span>
+          <h3><a href="blog/field-service.html">From Classroom to Field Service: Starting at Advance Business Systems</a></h3>
+          <p>What changes when the network isn't a lab exercise anymore — real customers, real firewalls, and a ticket queue that doesn't care about your study schedule.</p>
+          <div class="blog-meta"><span>November 2026</span><span>6 min read</span></div>
+        </article>
+        <article class="blog-card reveal">
+          <span class="blog-tag">Networking</span>
+          <h3><a href="blog/watchguard-vpn.html">When Two Sites Stop Talking: Troubleshooting a WatchGuard Site-to-Site VPN</a></h3>
+          <p>BOVPN tunnel down, two locations cut off from each other. Negotiation, authentication, policies — and verifying the fix with the customer, not just the logs.</p>
+          <div class="blog-meta"><span>November 2026</span><span>7 min read</span></div>
+        </article>
+        <article class="blog-card reveal">
+          <span class="blog-tag">Home Lab</span>
+          <h3><a href="blog/Networking%20Blog.html">Building My Homelab as a Networking Student</a></h3>
+          <p>Why classroom labs weren't enough — and how a mini PC running Proxmox became the place I learned virtualization, containers, and real troubleshooting.</p>
+          <div class="blog-meta"><span>2026</span><span>5 min read</span></div>
+        </article>
+        <article class="blog-card reveal">
+          <span class="blog-tag">Photography</span>
+          <h3><a href="blog/Polarplunge.html">Covering Pictures for windsorite.ca — Polar Plunge Windsor 2026</a></h3>
+          <p>A freezing morning, a charity plunge, and my first published event coverage for a local news platform.</p>
+          <div class="blog-meta"><span>February 2026</span><span>5 min read</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section class="section" id="contact">
     <div class="container">
       <div class="contact-inner reveal">
-        <p class="section-label center">/ Say Hello</p>
-        <h2 class="section-title center">Let's <em>Connect</em></h2>
-        <p class="contact-sub">Whether it's a collab, project, or just a conversation about cameras and packets — my inbox is open.</p>
-        <a href="mailto:contact@omvatish.ca" class="btn-primary large">contact@omvatish.ca</a>
-        <div class="social-links">
-          <a href="https://github.com/omvatish" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.09.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.103-.254-.447-1.27.097-2.646 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.376.202 2.394.1 2.646.64.699 1.026 1.591 1.026 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.337-.012 2.416-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/om-vatish-1a502424b/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/om_vatish/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-          </a>
-          <a href="https://www.twitch.tv/bakchodplayz" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitch">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
-          </a>
-          <a href="https://youtube.com/@vplayz1" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
+        <h2>Let's talk tech</h2>
+        <p class="contact-sub">Employers, IT managers, collaborators — or anyone fighting a WatchGuard tunnel at midnight. The fastest way to reach me is email.</p>
+        <div class="contact-links">
+          <a href="mailto:contact@omvatish.ca" class="btn-primary large">contact@omvatish.ca</a>
+          <a href="https://www.linkedin.com/in/om-vatish-1a502424b/" target="_blank" rel="noopener noreferrer" class="btn-ghost large">LinkedIn</a>
+          <a href="https://github.com/omvatish" target="_blank" rel="noopener noreferrer" class="btn-ghost large">GitHub</a>
+          <a href="resume.html" class="btn-ghost large">View Resume</a>
         </div>
       </div>
     </div>
   </section>
+  </main>
 
-  <!-- ─── FOOTER ───────────────────────────────────────────── -->
   <footer class="footer">
     <div class="container">
-      <p>© 2026 <strong>Om Vatish</strong> · Built with intention.</p>
-      <p class="footer-sub">IT Student · Photographer · Gamer</p>
+      <p>© 2026 <strong>Om Vatish</strong> · Windsor, Ontario</p>
+      <p class="footer-sub">IT Technician · Advance Business Systems</p>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
-
-  <script>
-    // Banner dismiss + nav offset updater
-    function dismissBanner() {
-      const banner = document.getElementById('dev-banner');
-      banner.style.display = 'none';
-      document.getElementById('nav').style.top = '0px';
-    }
-
-    // Dynamically offset nav below banner
-    function updateNavOffset() {
-      const banner = document.getElementById('dev-banner');
-      const nav = document.getElementById('nav');
-      if (banner && banner.offsetHeight > 0) {
-        nav.style.top = banner.offsetHeight + 'px';
-      }
-    }
-    
-
-    updateNavOffset();
-    window.addEventListener('resize', updateNavOffset);
-  </script>
-  <script>
-  window.addEventListener('scroll', () => {
-    const banner = document.getElementById('dev-banner');
-    const nav = document.getElementById('nav');
-    const bannerBottom = banner.getBoundingClientRect().bottom;
-    nav.style.top = Math.max(0, bannerBottom) + 'px';
-  });
-</script>
-
 </body>
 </html>
