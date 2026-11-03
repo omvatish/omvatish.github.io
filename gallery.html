@@ -50,7 +50,7 @@
       <h1 class="section-title">Photo <em>catalogue</em></h1>
       <p class="section-sub">Events, portraits, travel, and the lab. Tap any photo to open it full screen, then swipe or use the arrow keys to browse, just like a photos app.</p>
       <div class="glass-toolbar" role="toolbar" aria-label="Gallery info">
-        <span class="glass-pill" id="photo-count">11 items</span>
+        <span class="glass-pill" id="photo-count">7 items</span>
         <span class="glass-pill">Windsor, Ontario</span>
         <a class="glass-pill glass-pill-link" href="blog/Polarplunge.html">Latest story: Polar Plunge 2026</a>
       </div>
@@ -60,20 +60,16 @@
   <section class="section" style="padding-top:1.2rem">
     <div class="container">
       <div class="photo-grid" id="photo-grid">
-        <button class="photo-tile feature" data-index="0" aria-label="Open photo: Om Vatish, Windsor"><img src="images/Main1.jpg" alt="Om Vatish, Windsor" loading="lazy"/></button>
+        <button class="photo-tile feature" data-index="0" aria-label="Play video: Mosaic, the full collage">
+          <video src="images/mosaic.mp4" autoplay muted loop playsinline></video>
+          <span class="video-badge">▶ Video, playing</span>
+        </button>
         <button class="photo-tile" data-index="1" aria-label="Open photo: From above"><img src="images/IMG1.JPG" alt="From above" loading="lazy"/></button>
         <button class="photo-tile" data-index="2" aria-label="Open photo: Portrait series"><img src="images/IMG2.jpg" alt="Portrait series" loading="lazy"/></button>
-        <button class="photo-tile" data-index="3" aria-label="Open photo: From the catalogue"><img src="images/IMG3.jpg" alt="From the catalogue" loading="lazy"/></button>
-        <button class="photo-tile" data-index="4" aria-label="Open photo: Portrait series"><img src="images/IMG4.jpg" alt="Portrait series" loading="lazy"/></button>
-        <button class="photo-tile" data-index="5" aria-label="Open photo: Portrait series"><img src="images/IMG5.JPG" alt="Portrait series" loading="lazy"/></button>
-        <button class="photo-tile" data-index="6" aria-label="Open photo: Portrait series"><img src="images/IMG6.jpg" alt="Portrait series" loading="lazy"/></button>
-        <button class="photo-tile" data-index="7" aria-label="Open photo: Polar Plunge Windsor 2026"><img src="images/IMG8.jpg" alt="Polar Plunge Windsor 2026" loading="lazy"/></button>
-        <button class="photo-tile" data-index="8" aria-label="Open photo: The Proxmox home lab"><img src="images/homelab.jpg" alt="The Proxmox home lab" loading="lazy"/></button>
-        <button class="photo-tile" data-index="9" aria-label="Open photo: The mini PC behind the lab"><img src="images/minipc.png" alt="The mini PC behind the lab" loading="lazy"/></button>
-        <button class="photo-tile" data-index="10" aria-label="Open video: Mosaic">
-          <video src="images/mosaic.mp4" preload="metadata" muted playsinline></video>
-          <span class="video-badge">▶ Video</span>
-        </button>
+        <button class="photo-tile" data-index="3" aria-label="Open photo: Portrait series"><img src="images/IMG4.jpg" alt="Portrait series" loading="lazy"/></button>
+        <button class="photo-tile" data-index="4" aria-label="Open photo: Portrait series"><img src="images/IMG5.JPG" alt="Portrait series" loading="lazy"/></button>
+        <button class="photo-tile" data-index="5" aria-label="Open photo: Portrait series"><img src="images/IMG6.jpg" alt="Portrait series" loading="lazy"/></button>
+        <button class="photo-tile" data-index="6" aria-label="Open photo: Polar Plunge Windsor 2026"><img src="images/IMG8.jpg" alt="Polar Plunge Windsor 2026" loading="lazy"/></button>
       </div>
       <p style="margin-top:2rem"><a href="index.html#gallery" class="btn-ghost">← Back to home</a> <a href="blog/Polarplunge.html" class="btn-ghost">Read the Polar Plunge story</a></p>
     </div>
@@ -89,7 +85,7 @@
     <button class="glass-btn lightbox-next" id="lightbox-next" aria-label="Next photo">›</button>
     <figure class="lightbox-stage">
       <img id="lightbox-img" src="" alt=""/>
-      <video id="lightbox-video" src="" controls playsinline hidden></video>
+      <video id="lightbox-video" src="" controls playsinline autoplay muted loop hidden></video>
       <figcaption class="glass-caption">
         <strong id="lightbox-title"></strong>
         <span id="lightbox-sub"></span>
@@ -107,17 +103,13 @@
   <script src="js/main.js"></script>
   <script>
     const PHOTOS = [
-      { src: "images/Main1.jpg",    title: "Om Vatish",                  sub: "Windsor, Ontario" },
+      { src: "images/mosaic.mp4",   title: "Mosaic",                     sub: "Video, the full collage", video: true },
       { src: "images/IMG1.JPG",     title: "From above",                 sub: "Travel" },
       { src: "images/IMG2.jpg",     title: "Portrait series",            sub: "Photography" },
-      { src: "images/IMG3.jpg",     title: "From the catalogue",         sub: "Photography" },
       { src: "images/IMG4.jpg",     title: "Portrait series",            sub: "Photography" },
       { src: "images/IMG5.JPG",     title: "Portrait series",            sub: "Photography" },
       { src: "images/IMG6.jpg",     title: "Portrait series",            sub: "Photography" },
-      { src: "images/IMG8.jpg",     title: "Polar Plunge Windsor 2026",  sub: "Event coverage for windsorite.ca" },
-      { src: "images/homelab.jpg",  title: "The Proxmox home lab",       sub: "Personal infrastructure" },
-      { src: "images/minipc.png",   title: "The mini PC behind the lab", sub: "Lenovo ThinkCentre" },
-      { src: "images/mosaic.mp4",   title: "Mosaic",                     sub: "Video", video: true }
+      { src: "images/IMG8.jpg",     title: "Polar Plunge Windsor 2026",  sub: "Event coverage for windsorite.ca" }
     ];
 
     const box = document.getElementById("lightbox");
@@ -133,7 +125,7 @@
       const p = PHOTOS[current];
       if (p.video) {
         img.hidden = true; img.removeAttribute("src");
-        vid.hidden = false; vid.src = p.src;
+        vid.hidden = false; vid.src = p.src; vid.play().catch(() => {});
       } else {
         vid.pause(); vid.hidden = true; vid.removeAttribute("src");
         img.hidden = false; img.src = p.src; img.alt = p.title;
