@@ -1,4 +1,4 @@
-// Om Vatish — omvatish.ca (v2)
+// Om Vatish - omvatish.ca (v2)
 // Nav state, mobile menu, scroll reveal, active section highlighting.
 // Everything is null-guarded so the same file works on every page.
 

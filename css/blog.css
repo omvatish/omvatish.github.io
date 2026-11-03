@@ -1,4 +1,4 @@
-/* Blog post pages — omvatish.ca (v2, pairs with css/style.css) */
+/* Blog post pages - omvatish.ca (v2, pairs with css/style.css) */
 
 .blog-post{padding:calc(var(--nav-h) + 2.5rem) 0 5rem;min-height:100vh}
 .blog-post-container{max-width:780px;margin:0 auto;padding:0 4%}

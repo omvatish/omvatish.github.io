@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery | Om Vatish</title>
+  <meta name="description" content="Photo catalogue of Om Vatish, Windsor, Ontario. Event coverage, portraits, travel, and the home lab. Click any photo for the full view."/>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">OV<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li class="nav-close-item"><button class="nav-close" id="nav-close" aria-label="close menu">✕ Close</button></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#education">Education</a></li>
+      <li><a href="index.html#homelab">Home Lab</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li class="nav-mobile-buttons">
+        <a href="index.html#contact" class="btn-ghost">Get In Touch</a>
+        <a href="resume.html" class="btn-primary">Resume</a>
+      </li>
+    </ul>
+    <div class="nav-buttons">
+      <a href="index.html#contact" class="btn-ghost nav-resume">Get In Touch</a>
+      <a href="resume.html" class="btn-primary nav-resume">Resume</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main>
+  <header class="page-hero">
+    <div class="container">
+      <p class="section-label">/ Gallery</p>
+      <h1 class="section-title">Photo <em>catalogue</em></h1>
+      <p class="section-sub">Events, portraits, travel, and the lab. Tap any photo to open it full screen, then swipe or use the arrow keys to browse, just like a photos app.</p>
+      <div class="glass-toolbar" role="toolbar" aria-label="Gallery info">
+        <span class="glass-pill" id="photo-count">11 items</span>
+        <span class="glass-pill">Windsor, Ontario</span>
+        <a class="glass-pill glass-pill-link" href="blog/Polarplunge.html">Latest story: Polar Plunge 2026</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top:1.2rem">
+    <div class="container">
+      <div class="photo-grid" id="photo-grid">
+        <button class="photo-tile feature" data-index="0" aria-label="Open photo: Om Vatish, Windsor"><img src="images/Main1.jpg" alt="Om Vatish, Windsor" loading="lazy"/></button>
+        <button class="photo-tile" data-index="1" aria-label="Open photo: From above"><img src="images/IMG1.JPG" alt="From above" loading="lazy"/></button>
+        <button class="photo-tile" data-index="2" aria-label="Open photo: Portrait series"><img src="images/IMG2.jpg" alt="Portrait series" loading="lazy"/></button>
+        <button class="photo-tile" data-index="3" aria-label="Open photo: From the catalogue"><img src="images/IMG3.jpg" alt="From the catalogue" loading="lazy"/></button>
+        <button class="photo-tile" data-index="4" aria-label="Open photo: Portrait series"><img src="images/IMG4.jpg" alt="Portrait series" loading="lazy"/></button>
+        <button class="photo-tile" data-index="5" aria-label="Open photo: Portrait series"><img src="images/IMG5.JPG" alt="Portrait series" loading="lazy"/></button>
+        <button class="photo-tile" data-index="6" aria-label="Open photo: Portrait series"><img src="images/IMG6.jpg" alt="Portrait series" loading="lazy"/></button>
+        <button class="photo-tile" data-index="7" aria-label="Open photo: Polar Plunge Windsor 2026"><img src="images/IMG8.jpg" alt="Polar Plunge Windsor 2026" loading="lazy"/></button>
+        <button class="photo-tile" data-index="8" aria-label="Open photo: The Proxmox home lab"><img src="images/homelab.jpg" alt="The Proxmox home lab" loading="lazy"/></button>
+        <button class="photo-tile" data-index="9" aria-label="Open photo: The mini PC behind the lab"><img src="images/minipc.png" alt="The mini PC behind the lab" loading="lazy"/></button>
+        <button class="photo-tile" data-index="10" aria-label="Open video: Mosaic">
+          <video src="images/mosaic.mp4" preload="metadata" muted playsinline></video>
+          <span class="video-badge">▶ Video</span>
+        </button>
+      </div>
+      <p style="margin-top:2rem"><a href="index.html#gallery" class="btn-ghost">← Back to home</a> <a href="blog/Polarplunge.html" class="btn-ghost">Read the Polar Plunge story</a></p>
+    </div>
+  </section>
+  </main>
+
+  <!-- Liquid glass lightbox -->
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <span class="glass-pill lightbox-counter" id="lightbox-counter">1 / 11</span>
+    <button class="glass-btn lightbox-close" id="lightbox-close" aria-label="Close viewer">✕</button>
+    <button class="glass-btn lightbox-prev" id="lightbox-prev" aria-label="Previous photo">‹</button>
+    <button class="glass-btn lightbox-next" id="lightbox-next" aria-label="Next photo">›</button>
+    <figure class="lightbox-stage">
+      <img id="lightbox-img" src="" alt=""/>
+      <video id="lightbox-video" src="" controls playsinline hidden></video>
+      <figcaption class="glass-caption">
+        <strong id="lightbox-title"></strong>
+        <span id="lightbox-sub"></span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 <strong>Om Vatish</strong> · Windsor, Ontario</p>
+      <p class="footer-sub">IT Technician · Advance Business Systems</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const PHOTOS = [
+      { src: "images/Main1.jpg",    title: "Om Vatish",                  sub: "Windsor, Ontario" },
+      { src: "images/IMG1.JPG",     title: "From above",                 sub: "Travel" },
+      { src: "images/IMG2.jpg",     title: "Portrait series",            sub: "Photography" },
+      { src: "images/IMG3.jpg",     title: "From the catalogue",         sub: "Photography" },
+      { src: "images/IMG4.jpg",     title: "Portrait series",            sub: "Photography" },
+      { src: "images/IMG5.JPG",     title: "Portrait series",            sub: "Photography" },
+      { src: "images/IMG6.jpg",     title: "Portrait series",            sub: "Photography" },
+      { src: "images/IMG8.jpg",     title: "Polar Plunge Windsor 2026",  sub: "Event coverage for windsorite.ca" },
+      { src: "images/homelab.jpg",  title: "The Proxmox home lab",       sub: "Personal infrastructure" },
+      { src: "images/minipc.png",   title: "The mini PC behind the lab", sub: "Lenovo ThinkCentre" },
+      { src: "images/mosaic.mp4",   title: "Mosaic",                     sub: "Video", video: true }
+    ];
+
+    const box = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+    const vid = document.getElementById("lightbox-video");
+    const title = document.getElementById("lightbox-title");
+    const sub = document.getElementById("lightbox-sub");
+    const counter = document.getElementById("lightbox-counter");
+    let current = 0;
+
+    function show(i) {
+      current = (i + PHOTOS.length) % PHOTOS.length;
+      const p = PHOTOS[current];
+      if (p.video) {
+        img.hidden = true; img.removeAttribute("src");
+        vid.hidden = false; vid.src = p.src;
+      } else {
+        vid.pause(); vid.hidden = true; vid.removeAttribute("src");
+        img.hidden = false; img.src = p.src; img.alt = p.title;
+      }
+      title.textContent = p.title;
+      sub.textContent = p.sub;
+      counter.textContent = (current + 1) + " / " + PHOTOS.length;
+      history.replaceState(null, "", "#photo-" + current);
+    }
+    function openBox(i) {
+      box.hidden = false;
+      document.body.style.overflow = "hidden";
+      requestAnimationFrame(() => box.classList.add("open"));
+      show(i);
+    }
+    function closeBox() {
+      box.classList.remove("open");
+      vid.pause();
+      document.body.style.overflow = "";
+      history.replaceState(null, "", location.pathname);
+      setTimeout(() => { box.hidden = true; }, 220);
+    }
+
+    document.querySelectorAll(".photo-tile").forEach(tile => {
+      tile.addEventListener("click", () => openBox(parseInt(tile.dataset.index, 10)));
+    });
+    document.getElementById("lightbox-close").addEventListener("click", closeBox);
+    document.getElementById("lightbox-backdrop").addEventListener("click", closeBox);
+    document.getElementById("lightbox-prev").addEventListener("click", () => show(current - 1));
+    document.getElementById("lightbox-next").addEventListener("click", () => show(current + 1));
+    document.addEventListener("keydown", (e) => {
+      if (box.hidden) return;
+      if (e.key === "Escape") closeBox();
+      if (e.key === "ArrowLeft") show(current - 1);
+      if (e.key === "ArrowRight") show(current + 1);
+    });
+    let touchX = null;
+    box.addEventListener("touchstart", (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+    box.addEventListener("touchend", (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 48) show(current + (dx < 0 ? 1 : -1));
+      touchX = null;
+    }, { passive: true });
+
+    document.getElementById("photo-count").textContent = PHOTOS.length + " items";
+    const start = location.hash.match(/^#photo-(\d+)$/);
+    if (start) openBox(parseInt(start[1], 10));
+  </script>
+</body>
+</html>

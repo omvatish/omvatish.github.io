@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>When Two Sites Stop Talking: Troubleshooting a WatchGuard Site-to-Site VPN — Om Vatish</title>
-  <meta name="description" content="How a failed WatchGuard BOVPN tunnel between two business locations was diagnosed and fixed — IKEv2 negotiation, authentication, firewall policies, and verifying the fix with the customer. Anonymized field notes by Om Vatish."/>
+  <title>When Two Sites Stop Talking: Troubleshooting a WatchGuard Site-to-Site VPN - Om Vatish</title>
+  <meta name="description" content="How a failed WatchGuard BOVPN tunnel between two business locations was diagnosed and fixed - IKEv2 negotiation, authentication, firewall policies, and verifying the fix with the customer. Anonymized field notes by Om Vatish."/>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/blog.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,36 +56,36 @@
       </header>
 
       <article class="post-content">
-        <p class="lead">Two business locations. One site-to-site VPN between them. And a morning where the tunnel was down and the locations were cut off from each other. This is the anonymized version of how that kind of problem gets worked — no customer details, just the method.</p>
+        <p class="lead">Two business locations. One site-to-site VPN between them. And a morning where the tunnel was down and the locations were cut off from each other. This is the anonymized version of how that kind of problem gets worked, no customer details, just the method.</p>
 
         <h2>First: is it the tunnel, or everything else?</h2>
-        <p>A "VPN problem" gets reported for at least four different failures: the internet connection at one site, the firewall itself, the tunnel negotiation, or a routing/policy problem where the tunnel is up but traffic still doesn't flow. Each one has a different fix, so the first job is narrowing it down. Both sites online? Firewalls reachable and manageable — locally and through WatchGuard Cloud? Tunnel status: down entirely, or up with no traffic passing?</p>
+        <p>A "VPN problem" gets reported for at least four different failures: the internet connection at one site, the firewall itself, the tunnel negotiation, or a routing/policy problem where the tunnel is up but traffic still doesn't flow. Each one has a different fix, so the first job is narrowing it down. Both sites online? Firewalls reachable and manageable, locally and through WatchGuard Cloud? Tunnel status: down entirely, or up with no traffic passing?</p>
 
         <h2>Negotiation: where tunnels go to die</h2>
         <p>Site-to-site BOVPN on WatchGuard runs on IKEv2. When a tunnel won't establish, the cause usually lives in one of these buckets:</p>
         <ul>
-          <li><strong>Phase 1 mismatch</strong> — the two ends disagree on encryption, authentication, or Diffie-Hellman settings, so they never get past introductions</li>
-          <li><strong>Authentication problems</strong> — pre-shared key or identity mismatches that look identical to "it just won't connect" from the outside</li>
-          <li><strong>Gateway endpoints</strong> — a changed public address at one site means the other end is knocking on the wrong door</li>
-          <li><strong>Phase 2 / tunnel routes</strong> — the tunnel negotiates, but the local and remote networks defined on each side don't mirror each other, so no traffic is selected for the tunnel</li>
+          <li><strong>Phase 1 mismatch</strong>: the two ends disagree on encryption, authentication, or Diffie-Hellman settings, so they never get past introductions</li>
+          <li><strong>Authentication problems</strong>: pre-shared key or identity mismatches that look identical to "it just won't connect" from the outside</li>
+          <li><strong>Gateway endpoints</strong>: a changed public address at one site means the other end is knocking on the wrong door</li>
+          <li><strong>Phase 2 / tunnel routes</strong>: the tunnel negotiates, but the local and remote networks defined on each side don't mirror each other, so no traffic is selected for the tunnel</li>
         </ul>
-        <p>The discipline is to change <strong>one thing at a time</strong> and re-check. Shotgunning settings across both firewalls turns a one-hour fix into an all-day mystery, because now you don't know which change mattered — or which one made it worse.</p>
+        <p>The discipline is to change <strong>one thing at a time</strong> and re-check. Shotgunning settings across both firewalls turns a one-hour fix into an all-day mystery, because now you don't know which change mattered, or which one made it worse.</p>
 
         <h2>Up is not the same as working</h2>
-        <p>A tunnel showing "up" only proves the firewalls agreed to talk. Traffic still has to be <strong>allowed</strong> — firewall policies on both ends — and <strong>routed</strong> correctly in both directions. Testing has to be end to end: a real host at Site A reaching a real resource at Site B, and back. Ping the far gateway if you want, but the test that matters is the one the customer's applications actually make.</p>
+        <p>A tunnel showing "up" only proves the firewalls agreed to talk. Traffic still has to be <strong>allowed</strong>: firewall policies on both ends, and <strong>routed</strong> correctly in both directions. Testing has to be end to end: a real host at Site A reaching a real resource at Site B, and back. Ping the far gateway if you want, but the test that matters is the one the customer's applications actually make.</p>
 
         <h2>The last step isn't in the firewall</h2>
-        <p>Once communication was verified between the locations, the fix was confirmed with the customer contacts before the ticket closed. That's not ceremony — it's the difference between "the tunnel is up" and "the business is working again." Those are the same thing only if the customer says so.</p>
+        <p>Once communication was verified between the locations, the fix was confirmed with the customer contacts before the ticket closed. That's not ceremony, it's the difference between "the tunnel is up" and "the business is working again." Those are the same thing only if the customer says so.</p>
 
         <blockquote>VPN troubleshooting is 20% cryptography and 80% resisting the urge to change three settings at once.</blockquote>
 
         <h2>What I took from it</h2>
         <ul>
-          <li>Check both ends before touching either — tunnels fail asymmetrically</li>
+          <li>Check both ends before touching either, tunnels fail asymmetrically</li>
           <li>Read negotiation as a sequence: phase 1, authentication, phase 2, then policies and routing</li>
           <li>Document the working configuration once it's working, so the next outage starts from knowledge instead of archaeology</li>
         </ul>
-        <p>More field notes are coming as the work does. If you're fighting a similar tunnel problem: slow down, isolate the phase, and verify like a customer — not like a console.</p>
+        <p>More field notes are coming as the work does. If you're fighting a similar tunnel problem: slow down, isolate the phase, and verify like a customer, not like a console.</p>
       </article>
 
       <div class="post-footer-nav">
